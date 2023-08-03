@@ -1,0 +1,20 @@
+.container{
+  padding: 0px;
+}
+.container>a{
+  position: relative;
+  right: 250px;
+  }
+  .inicio{
+    position: relative;
+    left: 1200px;
+  }
+  .pacientes{
+    position: relative;
+    left: 1230px;
+  }
+  .login{
+    position: relative;
+    left: 1250px;
+  }
+  
