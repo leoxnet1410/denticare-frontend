@@ -25,18 +25,19 @@ export const Barra_navegacion = () => {
                 Inicio
               </Link>
             </li>
+           
+            
+            
             <li className="nav-item ">
               <Link className="nav-link" to="table_usuarios">
-              Usuario
+              Usuarios
               </Link>
-              
             
-
-              
             </li>
-            <li className="nav-item pacientes">
-              <Link className="nav-link" to="/table_pacientes">
-                Pacientes
+            
+            <li className="nav-item perfil">
+              <Link className="nav-link" to="/Perfil">
+                Perfil
               </Link>
             </li>
             <li className="nav-item login">

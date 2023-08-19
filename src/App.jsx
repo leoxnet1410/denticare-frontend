@@ -7,6 +7,7 @@ import { Welcome } from './Pages/Welcome'
 import { Barra_navegacion} from './Pages/Barra_navegacion'
 import { Table_pacientes} from './table/Table_pacientes'
 import { Table_usuarios} from './table/table_usuarios'
+import  Perfil from './Perfil/Perfil'
 
 
 
@@ -26,6 +27,7 @@ function App() {
               <Route path="/login" element={<LoginForm />} />
               <Route path="/table_pacientes" element={<Table_pacientes/>} />
               <Route path="/crear_usuario" element={<Crear_usuario/>} />
+              <Route path="/perfil" element={<Perfil/>} />
            
              
           
