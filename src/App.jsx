@@ -8,6 +8,7 @@ import { Barra_navegacion} from './Pages/Barra_navegacion'
 import { Table_pacientes} from './table/Table_pacientes'
 import { Table_usuarios} from './table/table_usuarios'
 import  Perfil from './Perfil/Perfil'
+import  Diagrama from './Perfil/diagrama'
 
 
 
@@ -28,6 +29,7 @@ function App() {
               <Route path="/table_pacientes" element={<Table_pacientes/>} />
               <Route path="/crear_usuario" element={<Crear_usuario/>} />
               <Route path="/perfil" element={<Perfil/>} />
+              <Route path="/diagrama" element={<Diagrama/>} />
            
              
           

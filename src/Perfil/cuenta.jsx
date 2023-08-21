@@ -2,8 +2,9 @@ const Cuenta = () => {
 
     return (
       <div>
-         <h1>Datos de la Cuenta</h1>
-  <table class="custom-table">
+            <h1 class="datos">Datos de la Cuenta</h1>
+         <div className="cuenta">
+  <table className="custom-table">
     <tr>
     
       <th>Fecha</th>
@@ -30,6 +31,7 @@ const Cuenta = () => {
     </tr>
     
   </table>
+  </div>
       </div>
 
  

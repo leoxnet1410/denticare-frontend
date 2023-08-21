@@ -104,7 +104,10 @@ tr:hover {
        body{
         background: #00B4DB;  
 background: -webkit-linear-gradient(to right, #0083B0, #00B4DB);  
-background: linear-gradient(to right, #0083B0, #00B4DB); /
+background: linear-gradient(to right, #0083B0, #00B4DB); 
+overflow: hidden;
+
+
 } 
         
 .form-container {
@@ -148,6 +151,8 @@ button {
   padding: 10px 20px;
   font-size: 16px;
   cursor: pointer;
+
+
 }
 
 button:hover{
@@ -158,12 +163,19 @@ h3{
 }
 .custom-table {
   max-width: 600px; /* Ajusta el valor según tu preferencia */
-  margin: 0 auto; } /* Centra la tabla horizontalmente */
+  margin: 0 auto;
+  position: relative;
+  left: 30px;
+ } /* Centra la tabla horizontalmente */
   .patient-box {
-    border: 1px solid #ccc;
+    border: 2px solid black;
     padding: 20px;
     width: 300px;
     text-align: left;
+    position: relative;
+    top: -700px;
+    right: 20%;
+    background-color: white;
 
 }
 .patient-box {
@@ -191,13 +203,14 @@ left: 30px;
   background-color: black;
 }
 .note-container {
-  width: 80%;
+  width: 40%;
   margin: 0 auto;
   padding: 20px;
   border: 1px solid #dddddd;
   background-color: #f5f5f5;
   position: relative;
-  top: 20px;
+  top: 60px;
+  left: 50%;
 }
 .note-textarea {
   width: 100%;
@@ -209,4 +222,98 @@ left: 30px;
 .note-container>h1{
   position: relative;
   top: -10px;
+}
+.cuenta{
+  position: relative;
+  right: 52%;
+  top: 450px;
+}
+.botones{
+  position: relative;
+  top: 740px;
+  left: 190px;
+}
+.citas{
+  position: relative;
+  top: -200px;
+  left: 45%;
+}
+.historial{
+  position: relative;
+  top: -150px;
+  left: 90%;
+}
+.datos{
+  position: relative;
+  top: 480px;
+  right: 50%;
+}
+.cuadro {
+  border: 2px solid #000;
+  padding: 20px;
+  max-width: 400px;
+  margin: 0 auto;
+  position: relative;
+  top: -700px;
+}
+
+.titulo {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.imagen {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+.main-box {
+  width: 300px;
+  height: 100px;
+  border: 1px solid black;
+  padding: 20px;
+ 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  top:-1100px;
+  left: 38%;
+}
+
+.inner-box {
+  display: flex;
+}
+
+.small-box1 {
+  width: 50px;
+  height: 50px;
+  margin: 5px;
+  background-color:red;
+  border: 1px solid black;
+}
+.small-box2 {
+  width: 50px;
+  height: 50px;
+  margin: 5px;
+  background-color: blue;
+  border: 1px solid black;
+}
+.small-box3 {
+  width: 50px;
+  height: 50px;
+  margin: 5px;
+  background-color: green;
+  border: 1px solid black;
+}
+
+.saldo{
+  position: relative;
+  color: white;
+  top: -1100px;
+  left: 45%;
+}
+.paciente{
+  color: black;
 }
