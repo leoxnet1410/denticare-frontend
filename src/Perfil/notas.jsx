@@ -2,9 +2,9 @@ const Notas = () => {
 
     return (
         <div>
-        <div class="note-container">
+        <div className="note-container">
      <h1>Notas</h1>
-     <textarea class="note-textarea" placeholder="Escribe tus notas aquí"></textarea>
+     <textarea className="note-textarea" placeholder="Escribe tus notas aquí"></textarea>
    </div>
        </div>
 

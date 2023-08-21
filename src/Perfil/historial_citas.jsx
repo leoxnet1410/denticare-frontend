@@ -3,10 +3,10 @@ const Historial_citas = () => {
     return (
       <div>
   
-      <h3>Historial de Citas</h3>
-   
-    <div class="card-body p-0">
-      <table class="table table-dark table-hover custom-table">
+  <h3 className="historial">Historial de Citas</h3>
+   <div className="citas">
+    
+      <table className="table  table-hover custom-table">
         <thead>
           <tr>
             <th>#</th>
@@ -20,22 +20,22 @@ const Historial_citas = () => {
           <tr>
             <td>1</td>
             <td>2023-08-19</td>
-            <td>Dr. Smith</td>
+            <td>Dr. perez</td>
             <td>Tratamiento A</td>
             <td>En proceso</td>
           </tr>
           <tr>
             <td>2</td>
             <td>2023-08-21</td>
-            <td>Dr. Johnson</td>
+            <td>Dr. guzman</td>
             <td>Tratamiento B</td>
             <td>Completado</td>
           </tr>
         </tbody>
       </table>
     </div>
-  </div>
-
+    </div>
+ 
 
 
  
