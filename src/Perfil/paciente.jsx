@@ -1,31 +1,18 @@
-const Paciente= () => {
+import { ListGroup } from "react-bootstrap";
 
-    return (
-      <div className="patient-box">
-        <h4 className="paciente">Datos del paciente</h4>
-      <div className="patient-field">
-          <strong>Nombre:</strong> Leonardo 
-      </div>
-      <div className="patient-field">
-          <strong>Apellido:</strong> Castillo
-      </div>
-      <div className="patient-field">
-          <strong>Edad:</strong> 21
-      </div>
-      <div className="patient-field">
-          <strong>Sexo:</strong> Masculino
-      </div>
-      <div className="patient-field">
-          <strong>Teléfono:</strong> 123456789
-      </div>
-      <div className="patient-field">
-          <strong>Correo:</strong> leonardocastillo1410@gmail.com
-      </div>
-  </div>
-
-
- 
+const Paciente = () => {
+  return (
+    <>
+      <h2 className="">Datos del paciente:</h2>
+      <ListGroup>
+        <ListGroup.Item>Nombre: Leonardo</ListGroup.Item>
+        <ListGroup.Item>Apellido: Castillo</ListGroup.Item>
+        <ListGroup.Item>Edad: 21</ListGroup.Item>
+        <ListGroup.Item>Sexo: Masculino</ListGroup.Item>
+        <ListGroup.Item>Telefono: 123456789</ListGroup.Item>
+        <ListGroup.Item>Correo: leonardocastillo1410@gmail.com</ListGroup.Item>
+      </ListGroup>
+    </>
   );
 };
 export default Paciente;
-   
