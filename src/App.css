@@ -1,319 +1,42 @@
-.encabezado{
-  color: white;
-  text-decoration: none;
-}
-.creative-login-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  background-color: #f7f7f7;
+body{
+    background: #33A5E3;
+
 }
 
-
-table {
-  border-collapse: collapse;
-  width: 100%;
-  border: 1px solid #ddd;
-  text-transform: capitalize;
-  position: relative;
-  top: 80px;
+.usuario{
+    position: fixed;
+    top: 40%;
+    left: 45%;
+    height: '100vh'
 }
-th, td {
-  padding: 10px;
-  text-align: left;
-  border-bottom: 1px solid black;
-  color: white;
-  
-}
-th {
-  background-color: black;
-  text-align: left;
-  color: white;
-}
-tr:hover {
-  background:black}
-
-  h1{
-    text-align: center;
-    position: relative;
-    top: 40px;
-    color: black;
+td {
+    text-transform: capitalize;
   }
-  .formu {
-    position: relative;
-    left: 300px;
-    top: 150px;
-
-   
-  
-    
-    
-  }
-  
-  .formulario {
-    background-color:black;
-    border-radius: 10px;
-    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    width: 40%;
-    max-width: 600px;
-    margin-top: -50px;
-    margin: 80px; /* Centra vertical y horizontalmente */
-    
-       }
-       .btn{
-       position: relative;
-       left: 140px;
-        top: 15px;
-        background: black;
-       
-       }
-       .forgot-password{
-        position: relative;
-        top: 25px;
-        left: 100px;
-       
-       }
-       .forgot-password>a{
-        text-decoration: none;
-        color: white;
-      
-       }
-       h2{
-        color: white;
-      position: relative;
-      left: 120px;
-       }
-       h4{
-        color: white;
-      position: relative;
-      left: 120px;
-       }
-       .form-label{
-        color: white;
-        position: relative;
-        left: 90px;
-      
-        
-       }
-       .form-control{
-        position: relative;
-        left: 90px;
-       }
-       body{
-        background: #00B4DB;  
-background: -webkit-linear-gradient(to right, #0083B0, #00B4DB);  
-background: linear-gradient(to right, #0083B0, #00B4DB); 
-overflow: hidden;
-
-
-} 
-        
-.form-container {
-  background-color:black;
-  border-radius: 10px;
-  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
-  padding: 20px;
-  width: 40%;
-  max-width: 400px;
-  margin: auto;
-  
-  position: relative;
-  top: 60px;
-}
-
-.form-group {
-  margin-bottom: 20px;
-}
-
-label {
-  display: block;
-  font-weight: bold;
-  margin-bottom: 5px;
-  color: white;
-}
-
-input[type="text"], input[type="date"], input[type="email"], input[type="tel"] {
-  width: 100%;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  font-size: 16px;
-  
-}
-
-button {
-  background-color: black;
-  color: white;
-  border: 1px solid white;
-  border-radius: 5px;
-  padding: 10px 20px;
-  font-size: 16px;
-  cursor: pointer;
-
-
-}
-
-button:hover{
- background:rgb(72, 228, 255);
-}
-h3{
-  color: white;
-}
-.custom-table {
-  max-width: 600px; /* Ajusta el valor según tu preferencia */
-  margin: 0 auto;
-  position: relative;
-  left: 30px;
- } /* Centra la tabla horizontalmente */
-  .patient-box {
-    border: 2px solid black;
-    padding: 20px;
-    width: 300px;
-    text-align: left;
-    position: relative;
-    top: -700px;
-    right: 20%;
-    background-color: white;
-
-}
-.patient-box {
-    margin-top: 0;
-   
-}
-.patient-field {
-    margin-bottom: 10px;
-}
-h4{
-  position: relative;
-left: 30px;
-
-}
-.custom-table {
-  border-collapse: collapse;
-  width: 100%;
-}
-.custom-table th, .custom-table td {
-  border: 1px solid #dddddd;
-  text-align: left;
-  padding: 8px;
-}
-.custom-table th {
-  background-color: black;
-}
-.note-container {
-  width: 40%;
-  margin: 0 auto;
-  padding: 20px;
-  border: 1px solid #dddddd;
-  background-color: #f5f5f5;
-  position: relative;
-  top: 60px;
-  left: 50%;
-}
-.note-textarea {
-  width: 100%;
-  height: 200px;
-  padding: 10px;
-  border: 1px solid #cccccc;
-  resize: none;
-}
-.note-container>h1{
-  position: relative;
-  top: -10px;
-}
-.cuenta{
-  position: relative;
-  right: 52%;
-  top: 450px;
-}
-.botones{
-  position: relative;
-  top: 740px;
-  left: 190px;
-}
-.citas{
-  position: relative;
-  top: -200px;
-  left: 45%;
-}
-.historial{
-  position: relative;
-  top: -150px;
-  left: 90%;
-}
-.datos{
-  position: relative;
-  top: 480px;
-  right: 50%;
-}
-.cuadro {
-  border: 2px solid #000;
-  padding: 20px;
-  max-width: 400px;
-  margin: 0 auto;
-  position: relative;
-  top: -700px;
-}
-
-.titulo {
-  font-size: 24px;
-  margin-bottom: 10px;
-}
-
-.imagen {
-  max-width: 100%;
-  height: auto;
-  display: block;
-  margin: 0 auto;
-}
-.main-box {
-  width: 300px;
-  height: 100px;
-  border: 1px solid black;
-  padding: 20px;
- 
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  top:-1100px;
-  left: 38%;
-}
-
-.inner-box {
-  display: flex;
-}
-
-.small-box1 {
-  width: 50px;
-  height: 50px;
-  margin: 5px;
-  background-color:red;
-  border: 1px solid black;
-}
-.small-box2 {
-  width: 50px;
-  height: 50px;
-  margin: 5px;
-  background-color: blue;
-  border: 1px solid black;
-}
+  .custom-narrow-input {
+    width: 40%; }
+  .small-box1,
+.small-box2,
 .small-box3 {
   width: 50px;
   height: 50px;
-  margin: 5px;
-  background-color: green;
-  border: 1px solid black;
-}
+  margin: 10px;
+  background-color: #3498db; 
+  border: 1px solid #000; 
+  display: inline-block;}
+  
+  .custom-rounded-table {
+    border-radius: 10px; }
+  .small-box1{
+    background-color: red;
+  }
 
-.saldo{
-  position: relative;
-  color: white;
-  top: -1100px;
-  left: 45%;
-}
-.paciente{
-  color: black;
-}
+  .small-box2{
+   background-color: blue;
+  }
+  .small-box3{
+    background-color:green;
+  }
+  .encabezado{
+    text-decoration: none;
+    color: white;
+  }
