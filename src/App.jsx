@@ -9,6 +9,7 @@ import { Table_pacientes } from "./table/Table_pacientes";
 import { Table_usuarios } from "./table/table_usuarios";
 import Perfil from "./Perfil/Perfil";
 import Diagrama from "./Perfil/diagrama";
+import { Rafa } from './Rafa';
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
           <Route path="/crear_usuario" element={<Crear_usuario />} />
           <Route path="/perfil" element={<Perfil />} />
           <Route path="/diagrama" element={<Diagrama />} />
+          <Route path="/rafa" element={<Rafa conteo={1} />} />
         </Routes>
         </Row>
      
