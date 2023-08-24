@@ -1,11 +1,16 @@
-
+import { Col, Table } from "react-bootstrap";
     
 export const Table_usuarios = () => {
   return (
     <div>
-      <h1>Tabla de Usuarios</h1>
-      <table>
-        <thead>
+    
+
+    <h3 className="usuario">Tabla de Usuarios</h3>
+
+      
+    <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' }}>
+    <Table size='sm' variant="dark" striped bordered hover style={{ maxWidth: '600px', margin: '0 auto' }}>
+    <thead>
           <tr>
             <th>Nombre</th>
             <th>Apellido</th>
@@ -21,12 +26,28 @@ export const Table_usuarios = () => {
           <tr>
             <td>carla</td>
             <td>LOPEZ</td>
-            <td>SECRETARIA</td>
+            <td>secretaria</td>
           </tr>
+          <tr>
+            <td>John</td>
+            <td>gonzales</td>
+            <td>doctor</td>
+          </tr>
+          <tr>
+            <td>carla</td>
+            <td>LOPEZ</td>
+            <td>secretaria</td>
+          </tr>
+          
         
         </tbody>
-      </table>
-    </div>
+      </Table>
+      </div>
+      </div>
+    
+
+
+     
   );
 };
 

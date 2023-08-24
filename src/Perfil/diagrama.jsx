@@ -1,15 +1,13 @@
-const Diagrama= () => {
+import React from 'react';
+import { Container } from 'react-bootstrap';
 
-    return (
-        
-        <div className="cuadro">
+const Diagrama = () => {
+  return (
+    <Container className="border border-dark p-4 text-center" style={{ marginTop: '150dpx', width: '350px', backgroundColor: 'black' }}>
       <div className="titulo">Título</div>
-     
-    
-      <img className="imagen" src="../../img/diagrama.jpg" alt="Imagen" />
-    
-    </div>
-    
+      <img className="imagen" src="./img/diagrama.jpf" alt="Imagen" />
+    </Container>
   );
 };
+
 export default Diagrama;

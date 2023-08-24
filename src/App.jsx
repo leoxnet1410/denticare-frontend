@@ -1,4 +1,4 @@
-// import './App.css'
+ import './App.css'
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { LoginForm } from "./Forms/Login";
 import { Crear_usuario } from "./Forms/Crear_usuario";
