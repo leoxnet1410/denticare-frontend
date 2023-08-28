@@ -1,0 +1,28 @@
+{
+  "patients": [
+    {
+      "id": 1,
+      "name": "Rafael",
+      "last_name": "Castillo",
+      "age": 37
+    },
+    {
+      "id": 2,
+      "name": "Pedro",
+      "last_name": "Perez",
+      "age": 41
+    },
+    {
+      "name": "Pene",
+      "last_name": "Parado",
+      "age": "23",
+      "id": 3
+    },
+    {
+      "name": "Otro",
+      "last_name": "Usuario",
+      "age": "45",
+      "id": 4
+    }
+  ]
+}

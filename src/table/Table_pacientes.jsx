@@ -1,9 +1,10 @@
+import { Table } from "react-bootstrap";
 export const Table_pacientes = () => {
     return (
 <div>
 <h1>Tabla de Pacientes</h1>
-<table>
-  <thead>
+<Table  size='sm' striped bordered hover>
+<tbody>
     <tr>
       <th>Nombre</th>
       <th>Apellido</th>
@@ -12,8 +13,8 @@ export const Table_pacientes = () => {
       <th>Tratamiento</th>
       <th>Saldo</th>
     </tr>
-  </thead>
-  <tbody>
+  
+  
     <tr>
       <td>Leonardo</td>
       <td>Castillo</td>
@@ -62,6 +63,7 @@ export const Table_pacientes = () => {
     </tr>
     
   </tbody>
-</table>
+  </Table>
 </div>
-    )}
+    )};
+    export default Table_pacientes;

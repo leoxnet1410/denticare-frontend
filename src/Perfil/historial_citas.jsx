@@ -1,12 +1,12 @@
-const Historial_citas = () => {
+import React from 'react';
+import { Table } from 'react-bootstrap';
 
-    return (
-      <div>
-  
-      <h3>Historial de Citas</h3>
-   
-    <div class="card-body p-0">
-      <table class="table table-dark table-hover custom-table">
+const Historial_citas = () => {
+  return (
+    <div className="p-4" style={{ backgroundColor: 'black', marginTop: '150px', marginBottom: '30px', width: '90%', marginLeft: '30px', borderRadius: '10px' }}>
+      <h3 className="mb-4 text-white text-center">Historial de citas</h3>
+
+      <Table size='sm' striped bordered hover variant='dark'>
         <thead>
           <tr>
             <th>#</th>
@@ -20,26 +20,27 @@ const Historial_citas = () => {
           <tr>
             <td>1</td>
             <td>2023-08-19</td>
-            <td>Dr. Smith</td>
+            <td>Dr. perez</td>
             <td>Tratamiento A</td>
             <td>En proceso</td>
           </tr>
           <tr>
             <td>2</td>
             <td>2023-08-21</td>
-            <td>Dr. Johnson</td>
+            <td>Dr. guzman</td>
             <td>Tratamiento B</td>
             <td>Completado</td>
           </tr>
         </tbody>
-      </table>
+      </Table>
     </div>
-  </div>
+  );
+};
 
+export default Historial_citas;
+ 
 
 
  
-  );
-};
-export default Historial_citas;
+  
    
