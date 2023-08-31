@@ -19,7 +19,8 @@ function App() {
               <Barra_navegacion />
           </Col>
         </Row>
-        <Row>
+        <Row className='p-5'>
+
         <Routes>
           <Route path="welcome" element={<Welcome />} />
           <Route path="/table_usuarios" element={<Table_usuarios />} />

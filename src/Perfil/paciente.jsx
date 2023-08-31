@@ -1,9 +1,13 @@
 import React from 'react';
 import { ListGroup } from 'react-bootstrap';
 
+
+
+
+
 const Paciente = () => {
   return (
-    <div className="p-4 text-rigth" style={{ maxWidth: '350px', margin: '0 auto', marginTop: '120px' }}>
+    <div className="p-4 text-right" style={{ maxWidth: '350px', margin: '0 auto', marginTop: '120px' }}>
       <div className="border border-dark">
         <div className="bg-dark text-center text-white p-2">Datos del paciente</div>
         <ListGroup variant="flush bg-dark" className="bg-dark">
