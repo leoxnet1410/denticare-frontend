@@ -3,7 +3,7 @@ import { Container } from 'react-bootstrap';
 
 const Diagrama = () => {
   return (
-    <Container className="border border-dark p-4 text-center" style={{ marginTop: '150dpx', width: '350px', backgroundColor: 'black' }}>
+    <Container className="border border-ligth p-4 text-center citas" style={{ marginTop: '20%', width: '350px',  }}>
       <div className="titulo">Título</div>
       <img className="imagen" src="./img/diagrama.jpf" alt="Imagen" />
     </Container>

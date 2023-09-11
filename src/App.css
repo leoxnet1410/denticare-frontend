@@ -1,6 +1,8 @@
 body{
-    background: #33A5E3;
-
+    background:#7cc1d9;
+    overflow: hidden;
+    
+    
 }
 
 .usuario{
@@ -40,3 +42,12 @@ td {
     text-decoration: none;
     color: white;
   }
+  .citas{
+    background: 
+    #4cadcf
+    ;
+  }
+  .crearcita{
+    background: #dfedec;
+  }
+  
