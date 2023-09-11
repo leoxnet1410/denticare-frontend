@@ -11,9 +11,12 @@ import { Col, Row } from "react-bootstrap";
 const Perfil = () => {
   return (
     <>
+    
+    
       <Col  >
+      
         <Paciente />
-        <Cuenta />
+        <Notas />
       </Col>
       <Col >
       <Botones />
@@ -23,8 +26,8 @@ const Perfil = () => {
       </Col>
       <Col >
         <Historial_citas />
-        
-        <Notas />
+  
+        <Cuenta />
       </Col>
       </>
    

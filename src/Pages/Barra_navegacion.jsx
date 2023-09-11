@@ -1,10 +1,17 @@
+import React from 'react';
 import { Link } from 'react-router-dom';
+import { Dropdown } from 'react-bootstrap';
+
+const linkStyle = {
+  textDecoration: 'none', // Aplica el estilo de "text-decoration: none"
+  color: 'white'
+};
 
 export const Barra_navegacion = () => {
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
       <div className="container">
-        <a className="encabezado " href="#">
+        <a className="encabezado" href="#">
           Denticare
         </a>
         <button
@@ -25,32 +32,35 @@ export const Barra_navegacion = () => {
                 Inicio
               </Link>
             </li>
-           
-            
-            
-            <li className="nav-item ">
+            <li className="nav-item">
               <Link className="nav-link" to="table_usuarios">
-              Usuarios
+                Usuarios
               </Link>
-            
             </li>
-            
             <li className="nav-item perfil">
               <Link className="nav-link" to="/Perfil">
                 Perfil
               </Link>
             </li>
-            <li className="nav-item login">
-              <Link className="nav-link" to="Login">
-                Iniciar sesion
-              </Link>
+            <li className="nav-item">
+              <Dropdown>
+                <Dropdown.Toggle variant="dark  " id="dropdown-basic">
+                  Login
+                </Dropdown.Toggle>
+                <Dropdown.Menu className='citas'>
+                  <Dropdown.Item>
+                    <Link  style={linkStyle} to="Login">
+                       Iniciar sesión
+                    </Link>
+                  </Dropdown.Item>
+                  <Dropdown.Item>
+                    <Link style={linkStyle} to="Crear_usuario">
+                      Crear Usuario
+                    </Link>
+                  </Dropdown.Item>
+                </Dropdown.Menu>
+              </Dropdown>
             </li>
-            <li className="nav-item Crearusuario">
-              <Link className="nav-link" to="Crear_usuario">
-                Crear Usuario
-              </Link>
-            </li>
-            
           </ul>
         </div>
       </div>

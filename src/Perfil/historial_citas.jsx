@@ -1,19 +1,21 @@
 import React from 'react';
 import { Card, Table, Button } from 'react-bootstrap';
-import { CrearCita } from '../Forms/Crear_cita';
+import { Crear_Cita } from '../Forms/Crear_cita';
  
 
 const Historial_citas = () => {
  
   return (
+    <div style={{ marginTop: '5%' }}>
     <Card >
-
-      <Card.Header className='justify-content-between d-flex bg-dark text-light' >
-        <span>Historial de citas</span>
-        <CrearCita/>
+      <div className='citas'>
+      <Card.Header className='justify-content-between d-flex  text-dark' >
+      <span className="text-white">Historial de citas</span>
+        <Crear_Cita/>
       </Card.Header>
-      <Card.Body className='bg-dark'>
-        <Table size='sm' striped bordered hover variant='dark'>
+      </div>
+      <Card.Body className='bg-light'>
+        <Table size='sm' striped bordered hover variant='light'>
           <thead>
             <tr>
               <th>#</th>
@@ -42,6 +44,7 @@ const Historial_citas = () => {
         </Table>
       </Card.Body>
     </Card >
+    </div>
   );
 
 };

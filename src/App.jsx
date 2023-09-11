@@ -10,6 +10,8 @@ import { Table_usuarios } from "./table/table_usuarios";
 import Perfil from "./Perfil/Perfil";
 import Diagrama from "./Perfil/diagrama";
 
+
+
 function App() {
   return (
     <BrowserRouter>
@@ -29,6 +31,7 @@ function App() {
           <Route path="/crear_usuario" element={<Crear_usuario />} />
           <Route path="/perfil" element={<Perfil />} />
           <Route path="/diagrama" element={<Diagrama />} />
+       
         </Routes>
         </Row>
      

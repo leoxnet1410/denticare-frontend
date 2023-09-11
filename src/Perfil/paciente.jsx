@@ -1,27 +1,28 @@
 import React from 'react';
-import { ListGroup } from 'react-bootstrap';
-
-
-
-
+import { Card, ListGroup } from 'react-bootstrap';
 
 const Paciente = () => {
   return (
-    <div className="p-4 text-right" style={{ maxWidth: '350px', margin: '0 auto', marginTop: '120px' }}>
-      <div className="border border-dark">
-        <div className="bg-dark text-center text-white p-2">Datos del paciente</div>
-        <ListGroup variant="flush bg-dark" className="bg-dark">
-          <ListGroup.Item variant="dark">Nombre: Leonardo</ListGroup.Item>
-          <ListGroup.Item variant="dark" >Apellido: Castillo</ListGroup.Item>
-          <ListGroup.Item variant="dark" >Edad: 21</ListGroup.Item>
-          <ListGroup.Item variant="dark" >Sexo: Masculino</ListGroup.Item>
-          <ListGroup.Item variant="dark" >Telefono: 123456789</ListGroup.Item>
-          <ListGroup.Item variant="dark" >Correo: leonardocastillo1410@gmail.com</ListGroup.Item>
-        </ListGroup>
-      </div>
+    <div style={{ marginTop: '1%' }}>
+    <div className="p-4 text-right border-2 text-muted">
+      <Card bg="light" text="light" border="light">
+        <div className='citas'>
+          <Card.Header>Datos del paciente</Card.Header>
+        </div>
+        <Card.Body>
+          <ListGroup size='sm' striped bordered hover variant='light'>
+            <ListGroup.Item><strong>Nombre:</strong> Leonardo</ListGroup.Item>
+            <ListGroup.Item><strong>Apellido:</strong> Castillo</ListGroup.Item>
+            <ListGroup.Item><strong>Edad:</strong> 21</ListGroup.Item>
+            <ListGroup.Item><strong>Sexo:</strong> Masculino</ListGroup.Item>
+            <ListGroup.Item><strong>Teléfono:</strong> 123456789</ListGroup.Item>
+            <ListGroup.Item><strong>Correo:</strong> leonardocastillo1410@gmail.com</ListGroup.Item>
+          </ListGroup>
+        </Card.Body>
+      </Card>
+    </div>
     </div>
   );
 };
 
 export default Paciente;
-
