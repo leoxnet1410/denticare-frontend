@@ -7,7 +7,7 @@ const linkStyle = {
   color: 'white'
 };
 
-export const Barra_navegacion = () => {
+export const BarraNavegacion = () => {
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
       <div className="container">
