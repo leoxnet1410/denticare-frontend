@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Button, Modal, Form, Card } from "react-bootstrap";
 
-export const Boton_crear_usuario = () => {
+export const Boton_crear_usuarioyarn = () => {
   const [show, setShow] = useState(false);
   const [nombre, setNombre] = useState("");
   const [apellido, setApellido] = useState("");
