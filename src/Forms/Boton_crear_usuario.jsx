@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Button, Modal, Form, Card } from "react-bootstrap";
+import { Button, Modal, Form,  } from "react-bootstrap";
 
 export const Boton_crear_usuarioyarn = () => {
   const [show, setShow] = useState(false);
