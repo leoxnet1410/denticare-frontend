@@ -1,5 +1,4 @@
 
-import Botones from "./botones";
 import Cuenta from "./cuenta";
 import Historial_citas from "./historial_citas";
 import Notas from "./notas";
@@ -19,7 +18,7 @@ const Perfil = () => {
         <Notas />
       </Col>
       <Col >
-      <Botones />
+      
         <Saldo />
         <Diagrama />
      

@@ -1,11 +1,12 @@
 import React from 'react';
 import { Container } from 'react-bootstrap';
+import diagramaImage from '../img/diagrama.jpg';
 
 const Diagrama = () => {
   return (
-    <Container className="border border-ligth p-4 text-center citas" style={{ marginTop: '20%', width: '350px',  }}>
-      <div className="titulo">Título</div>
-      <img className="imagen" src="./img/diagrama.jpf" alt="Imagen" />
+    <Container className="border border-light p-4 text-center citas" style={{ marginTop: '20%', width: '350px' }}>
+      <div className="titulo"></div>
+      <img className="imagen" src={diagramaImage} alt="Imagen" style={{ width: '200px', height: 'auto' }} />
     </Container>
   );
 };

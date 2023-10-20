@@ -31,18 +31,15 @@ const Paciente = () => {
       <div className="p-4 text-right border-2 text-muted">
         <Card bg="light" text="light" border="light">
           <div className='citas'>
-            <Card.Header>
-              {editMode ? (
-                <div>
-                  <span>Editar Datos del paciente</span>
-                  <button className="btn btn-secondary float-end" onClick={handleEditClick}>Cancelar</button>
-                </div>
-              ) : (
-                <div>
-                  Datos del paciente
-                  <button className="btn btn-primary float-end" onClick={handleEditClick}>Editar</button>
-                </div>
-              )}
+            <Card.Header className="d-flex justify-content-between align-items-center">
+              <h5>{editMode ? 'Editar Datos del paciente' : 'Datos del paciente'}</h5>
+              <button
+                className={`btn citas rounded-pill ${editMode ? '' : 'bg-white'}`}
+                onClick={handleEditClick}
+                style={{ backgroundColor: 'white' }}
+              >
+                {editMode ? 'Guardar' : 'Modificar'}
+              </button>
             </Card.Header>
           </div>
           <Card.Body>

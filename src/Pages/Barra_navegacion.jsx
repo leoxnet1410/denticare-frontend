@@ -28,7 +28,7 @@ export const Barra_navegacion = () => {
         <div className="collapse navbar-collapse" id="navbarText">
           <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
             <li className="nav-item welcome">
-              <Link className="nav-link" to="welcome">
+              <Link className="nav-link" to="/">
                 Inicio
               </Link>
             </li>
@@ -54,7 +54,7 @@ export const Barra_navegacion = () => {
                     </Link>
                   </Dropdown.Item>
                   <Dropdown.Item>
-                    <Link style={linkStyle} to="Crear_usuario">
+                    <Link style={linkStyle} to="table_usuarios">
                       Crear Usuario
                     </Link>
                   </Dropdown.Item>
