@@ -3,6 +3,7 @@ body{
     overflow: hidden;
     
     
+    
 }
 
 .usuario{
@@ -61,4 +62,13 @@ td {
   ::-webkit-scrollbar-thumb {
     background-color:  #3498db; /* Cambia el color de fondo de la barra */
     border-radius: 6px; /* Borde redondeado de la barra */
+  }
+  
+  .iconoperfil{
+   position: relative;
+    color: #3498db;
+   left: 180px;
+    font-size: 20px;
+    text-decoration: none;
+    margin-top: -30px;
   }

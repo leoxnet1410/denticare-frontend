@@ -1,16 +1,18 @@
 import React, { useState } from 'react';
-
 import { Form, Button, Modal } from 'react-bootstrap';
 
+// Componente para crear un nuevo pago
 export const CrearPago = () => {
-  const [show, setShow] = useState(false);
-  const [fecha, setFecha] = useState('');
-  const [tipo, setTipo] = useState('');
-  const [monto, setMonto] = useState('');
+  const [show, setShow] = useState(false); // Estado para mostrar/ocultar el modal de creación de pagos
+  const [fecha, setFecha] = useState(''); // Estado para almacenar la fecha del pago
+  const [tipo, setTipo] = useState(''); // Estado para almacenar el tipo de pago
+  const [monto, setMonto] = useState(''); // Estado para almacenar el monto del pago
 
+  // Función para manejar el envío del formulario de creación de pagos
   const handleSubmit = (e) => {
     e.preventDefault();
 
+    // Muestra en la consola los datos ingresados
     console.log('Fecha:', fecha);
     console.log('Tipo:', tipo);
     console.log('Monto:', monto);
@@ -18,16 +20,13 @@ export const CrearPago = () => {
 
   return (
     <>
-      
-      <Button variant=""style={{background:"white"}} onClick={() => setShow(true)} className="rounded-pill">
-          Crear Pago
-        </Button>
-      
+      <Button variant="" style={{ background: "white" }} onClick={() => setShow(true)} className="rounded-pill">
+        Crear Pago
+      </Button>
+
       <Modal show={show} onHide={() => setShow(false)}>
         <Modal.Header className="citas" closeButton>
-
-          <Modal.Title className=" text-white">Ingresar Datos</Modal.Title>
-
+          <Modal.Title className="text-white">Ingresar Datos</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <Form onSubmit={handleSubmit}>
@@ -62,7 +61,7 @@ export const CrearPago = () => {
               />
             </Form.Group>
 
-            <Button className="citas " style={{ marginTop: '5%', color:'white' }} onClick={() => setShow(false)}>
+            <Button className="citas" style={{ marginTop: '5%', color: 'white' }} onClick={() => setShow(false)}>
               Guardar Pago
             </Button>
           </Form>

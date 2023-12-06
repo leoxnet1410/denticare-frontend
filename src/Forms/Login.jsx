@@ -1,18 +1,22 @@
 
 import React, { useState } from 'react';
 import { Button, Col, Form, FormControl, Row, Alert } from 'react-bootstrap';
-import { Crear_usuario } from './Crear_usuario';
+import { Link } from 'react-router-dom'; // Importa el componente Link de React Router
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faTooth } from '@fortawesome/free-solid-svg-icons';
 
+// Componente para el formulario de inicio de sesión
 export const LoginForm = () => {
-  const [usuario, setUsuario] = useState('');
-  const [contrasena, setContrasena] = useState('');
-  const [errorUsuario, setErrorUsuario] = useState('');
-  const [errorContrasena, setErrorContrasena] = useState('');
+  const [usuario, setUsuario] = useState(''); // Estado para almacenar el nombre de usuario
+  const [contrasena, setContrasena] = useState(''); // Estado para almacenar la contraseña
+  const [errorUsuario, setErrorUsuario] = useState(''); // Estado para manejar errores en el campo de usuario
+  const [errorContrasena, setErrorContrasena] = useState(''); // Estado para manejar errores en el campo de contraseña
 
+  // Función para manejar el envío del formulario de inicio de sesión
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    // Validación de usuario y contraseña 
+    // Validación de usuario y contraseña
     if (!usuario) {
       setErrorUsuario('El campo Usuario es obligatorio');
     } else {
@@ -35,7 +39,7 @@ export const LoginForm = () => {
   return (
     <Row className="justify-content-center align-items-center" style={{ minHeight: '100vh' }}>
       <Col xs={6} sm={4} md={2} className="mt-5 border border-dark p-4" style={{ backgroundColor: 'black' }}>
-        <h2 className="text-center mb-4 text-white">Denticare</h2>
+        <h2 className="text-center mb-4 text-white">Denticare <FontAwesomeIcon icon={faTooth} /></h2>
 
         <Form onSubmit={handleSubmit}>
           <Form.Group controlId="usuario">
@@ -65,25 +69,17 @@ export const LoginForm = () => {
           </Button>
 
           <p className="text-center mt-3">
-            <a href="#" style={{ textDecoration: 'none', color: 'white', ':hover': { color: 'black' } }}>
+            <Link to="#" style={{ textDecoration: 'none', color: 'white' }}>
               ¿Olvidaste tu contraseña?
-            </a>
+            </Link>
+          </p>
+          <p className="text-center mt-3">
+            <Link to="forms_create" style={{ textDecoration: 'none', color: 'white' }}>
+              Crear Usuario
+            </Link>
           </p>
         </Form>
-        <p className="text-center mt-3">
-          <Crear_usuario/>
-        </p>
       </Col>
     </Row>
   );
 };
-
-
-
-
-
-
-
-
-
-

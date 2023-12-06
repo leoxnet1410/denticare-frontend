@@ -1,19 +1,21 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Dropdown } from 'react-bootstrap';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faTooth} from '@fortawesome/free-solid-svg-icons';
+
 
 const linkStyle = {
-  textDecoration: 'none', // Aplica el estilo de "text-decoration: none"
-  color: 'white'
+  textDecoration: 'none', 
 };
 
 export const Barra_navegacion = () => {
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
       <div className="container">
-        <a className="encabezado" href="#">
-          Denticare
-        </a>
+        <span className="encabezado" >
+          Denticare <FontAwesomeIcon icon={faTooth} />
+        </span>
         <button
           className="navbar-toggler"
           type="button"
@@ -32,9 +34,20 @@ export const Barra_navegacion = () => {
                 Inicio
               </Link>
             </li>
+            <li className="nav-item tratamientos">
+              <Link className="nav-link" to="/tratamientos">
+               Tratamientos
+              </Link>
+            </li>
+            
             <li className="nav-item">
               <Link className="nav-link" to="table_usuarios">
                 Usuarios
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link className="nav-link" to="table_pacientes">
+                pacientes
               </Link>
             </li>
             <li className="nav-item perfil">
@@ -54,7 +67,7 @@ export const Barra_navegacion = () => {
                     </Link>
                   </Dropdown.Item>
                   <Dropdown.Item>
-                    <Link style={linkStyle} to="table_usuarios">
+                    <Link style={linkStyle} to="Forms_create">
                       Crear Usuario
                     </Link>
                   </Dropdown.Item>
