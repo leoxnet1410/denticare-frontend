@@ -61,27 +61,9 @@ export const Barra_navegacion = () => {
               </Link>
             </li>
             <li className="nav-item">
-<<<<<<< HEAD
-             
-=======
-              <Dropdown>
-                <Dropdown.Toggle variant="dark  " id="dropdown-basic">
-                  Login
-                </Dropdown.Toggle>
-                <Dropdown.Menu className='citas'>
-                  <Dropdown.Item>
-                    <Link  style={linkStyle} to="Login">
-                       Iniciar sesión
-                    </Link>
-                  </Dropdown.Item>
-                  <Dropdown.Item>
-                    <Link style={linkStyle} to="Forms_create">
-                      Crear Usuario
-                    </Link>
-                  </Dropdown.Item>
-                </Dropdown.Menu>
-              </Dropdown>
->>>>>>> 5dccfb3ce6f2766d32f3240f5e8c3e839cf6f09c
+
+
+              
             </li>
           </ul>
         </div>
