@@ -1,19 +1,21 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Dropdown } from 'react-bootstrap';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faTooth} from '@fortawesome/free-solid-svg-icons';
+
 
 const linkStyle = {
-  textDecoration: 'none', // Aplica el estilo de "text-decoration: none"
-  color: 'white'
+  textDecoration: 'none', 
 };
 
 export const Barra_navegacion = () => {
   return (
-    <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+    <nav class="navbar navbar-expand-lg  bg-white">
       <div className="container">
-        <a className="encabezado" href="#">
-          Denticare
-        </a>
+        <span className="encabezado" >
+          Denticare <FontAwesomeIcon icon={faTooth} />
+        </span>
         <button
           className="navbar-toggler"
           type="button"
@@ -32,9 +34,20 @@ export const Barra_navegacion = () => {
                 Inicio
               </Link>
             </li>
+            <li className="nav-item tratamientos">
+              <Link className="nav-link" to="/tratamientos">
+               Tratamientos
+              </Link>
+            </li>
+            
             <li className="nav-item">
               <Link className="nav-link" to="table_usuarios">
                 Usuarios
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link className="nav-link" to="table_pacientes">
+                pacientes
               </Link>
             </li>
             <li className="nav-item perfil">
@@ -42,24 +55,13 @@ export const Barra_navegacion = () => {
                 Perfil
               </Link>
             </li>
+            <li className="nav-item perfil">
+              <Link className="nav-link" to="/forms_create">
+               Agenda
+              </Link>
+            </li>
             <li className="nav-item">
-              <Dropdown>
-                <Dropdown.Toggle variant="dark  " id="dropdown-basic">
-                  Login
-                </Dropdown.Toggle>
-                <Dropdown.Menu className='citas'>
-                  <Dropdown.Item>
-                    <Link  style={linkStyle} to="Login">
-                       Iniciar sesión
-                    </Link>
-                  </Dropdown.Item>
-                  <Dropdown.Item>
-                    <Link style={linkStyle} to="table_usuarios">
-                      Crear Usuario
-                    </Link>
-                  </Dropdown.Item>
-                </Dropdown.Menu>
-              </Dropdown>
+             
             </li>
           </ul>
         </div>
