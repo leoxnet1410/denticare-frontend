@@ -3,6 +3,12 @@
 body {
     background: #7cc1d9;
     overflow: hidden;
+<<<<<<< HEAD
+=======
+    
+    
+    
+>>>>>>> 5dccfb3ce6f2766d32f3240f5e8c3e839cf6f09c
 }
 
 .usuario {
@@ -382,6 +388,7 @@ td {
     gap: 10px; /* Espacio entre los botones */
   }
 
+<<<<<<< HEAD
 .text-decoration-dashed {
     text-decoration: line-through;
 }
@@ -412,3 +419,44 @@ td {
     background-color: #000;
     color:#28a745;
 }
+=======
+  .small-box2{
+   background-color: blue;
+  }
+  .small-box3{
+    background-color:green;
+  }
+  .encabezado{
+    text-decoration: none;
+    color: white;
+  }
+  .citas{
+    background: 
+    #4cadcf
+    
+    }
+    
+  
+  .crearcita{
+    background: #dfedec;
+  }
+  
+  ::-webkit-scrollbar {
+    width: 12px;
+  }
+  
+  /* Estilo del indicador de la barra de desplazamiento */
+  ::-webkit-scrollbar-thumb {
+    background-color:  #3498db; /* Cambia el color de fondo de la barra */
+    border-radius: 6px; /* Borde redondeado de la barra */
+  }
+  
+  .iconoperfil{
+   position: relative;
+    color: #3498db;
+   left: 180px;
+    font-size: 20px;
+    text-decoration: none;
+    margin-top: -30px;
+  }
+>>>>>>> 5dccfb3ce6f2766d32f3240f5e8c3e839cf6f09c
