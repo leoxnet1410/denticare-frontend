@@ -1,21 +1,15 @@
-body {
-  margin: 0;
-  padding: 0;
-  font-family: Arial, sans-serif;
- color:black;
- background: black;
-  
-
+html, body{
+  padding: 0px;
+  margin: 0px;
+  height: 100%;
+  width: 100%;
 }
 
 nav {
-  
   color: #fff;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  
-  top: 10px;
 }
 
 .logo {
@@ -114,82 +108,90 @@ nav {
 
 .forgot-password a {
   text-decoration: none;
-  color: #1877f2;}
-  .invitado{
-    position: relative;
+  color: #1877f2;
+}
+
+.invitado {
+  position: relative;
   left: 70px;
-  }
-  
-  h1 {
-    font-size: 36px;
-    color: black;
-    margin-bottom: 20px;
-  }
-  .jumbotron {
-    background-color: #f0f0f0;
-    padding: 3rem;
-    text-align: center;
-  }
-  
-  /* Estilos para la sección de servicios */
-  #servicios {
-    background-color: #f9f9f9;
-    padding: 3rem 0;
-  }
-  
-  .card {
-    margin-bottom: 1.5rem;
-  }
-  
-  .card-title {
-    font-size: 1.5rem;
-    font-weight: bold;
-  }
-  
-  /* Estilos para la sección de Nosotros */
-  #nosotros {
-    padding: 3rem 0;
-  }
-  
-  /* Estilos para la sección de contacto */
-  #contacto {
-    background-color: #f9f9f9;
-    padding: 3rem 0;
-    position: relative;
-  }
-  
-  
-  
-  .btn-primary {
-    background-color: #007bff;
-    border-color: #007bff;
-  }
-  
-  /* Estilos para el pie de página */
-  footer {
-    background-color: #343a40;
-    color: #fff;
-    padding: 1rem 0;
-  }
-  .nav-item {
-    color: white;
-    }
-  
-  .nav-white:hover {
-    /* Opcional: Cambiar el color al pasar el mouse */
-    color: #f0f0f0;
-  }
-  .encabezado{
-    color: white;
-    text-decoration: none;
-  }
-  .login{
-    color: white;
-  }
-  h2{
-    position: relative;
-    text-align: center;
-  }
-  p{
-    position: relative;
-  }
+}
+
+h1 {
+  font-size: 36px;
+  color: black;
+  margin-bottom: 20px;
+}
+
+.jumbotron {
+  background-color: #f0f0f0;
+  padding: 3rem;
+  text-align: center;
+}
+
+/* Estilos para la sección de servicios */
+#servicios {
+  background-color: #f9f9f9;
+  padding: 3rem 0;
+}
+
+.card {
+  margin-bottom: 1.5rem;
+}
+
+.card-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+/* Estilos para la sección de Nosotros */
+#nosotros {
+  padding: 3rem 0;
+}
+
+/* Estilos para la sección de contacto */
+#contacto {
+  background-color: #f9f9f9;
+  padding: 3rem 0;
+  position: relative;
+}
+
+
+
+.btn-primary {
+  background-color: #007bff;
+  border-color: #007bff;
+}
+
+/* Estilos para el pie de página */
+footer {
+  background-color: #343a40;
+  color: #fff;
+  padding: 1rem 0;
+}
+
+.nav-item {
+  color: white;
+}
+
+.nav-white:hover {
+  /* Opcional: Cambiar el color al pasar el mouse */
+  color: #f0f0f0;
+}
+
+.encabezado {
+  color: white;
+  text-decoration: none;
+}
+
+.login {
+  color: white;
+}
+
+h2 {
+  position: relative;
+  text-align: center;
+}
+
+p {
+  position: relative;
+}
