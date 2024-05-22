@@ -2,17 +2,9 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Card, Form, Row, Col } from 'react-bootstrap';
 import { Crear_paciente } from '../Forms/Crear_paciente'; // Importa el componente para crear pacientes
-<<<<<<< HEAD
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUsersLine, faTrashAlt, faUserCircle } from '@fortawesome/free-solid-svg-icons'; // Nuevos iconos
 import { Link } from 'react-router-dom';
-=======
-import { Boton_delete_paciente } from '../Perfil/boton_delete_paciente'; // Importa el botón para eliminar pacientes
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faUsersLine } from '@fortawesome/free-solid-svg-icons';
-import BotonPerfil from '../Perfil/boton_perfil';
-
->>>>>>> 5dccfb3ce6f2766d32f3240f5e8c3e839cf6f09c
 const url = 'http://localhost:3200'; // URL de la API
 
 const Table_pacientes = () => {
@@ -62,15 +54,12 @@ const Table_pacientes = () => {
     }
   };
 
-<<<<<<< HEAD
   // Función para redirigir al componente de perfil
   const handleMostrarPerfil = (pacienteId) => {
     // Aquí puedes redirigir a la ruta del perfil del paciente
     // Por ejemplo: history.push(`/perfil/${pacienteId}`);
   };
 
-=======
->>>>>>> 5dccfb3ce6f2766d32f3240f5e8c3e839cf6f09c
   return (
     <div style={{ marginTop: '2%', maxWidth: '50%', marginLeft: '25%' }}>
       <Card>
@@ -102,12 +91,7 @@ const Table_pacientes = () => {
               <tr>
                 <th className="text-center">Nombre</th>
                 <th className="text-center">Apellido</th>
-<<<<<<< HEAD
                 <th className="text-center">Acciones</th> {/* Ajuste de la cabecera */}
-=======
-                <th className="text-center"></th>
-                <th className="text-center">Acciones</th>
->>>>>>> 5dccfb3ce6f2766d32f3240f5e8c3e839cf6f09c
               </tr>
             </thead>
             <tbody>
@@ -115,7 +99,6 @@ const Table_pacientes = () => {
                 <tr key={index}>
                   <td style={{ textTransform: 'capitalize' }}>{paciente.first_name}</td>
                   <td style={{ textTransform: 'capitalize' }}>{paciente.last_name}</td>
-<<<<<<< HEAD
                   <td className="text-center" style={{ padding: '10px' }}>
                     <FontAwesomeIcon
                       icon={faTrashAlt}
@@ -132,27 +115,6 @@ const Table_pacientes = () => {
                         style={{ cursor: 'pointer', marginLeft: '10px' }}
                       />
                     </Link>
-=======
-                  <td>
-                    <input
-                      type="checkbox"
-                      onChange={() => handleSeleccionarPaciente(paciente.id)}
-                      checked={pacientesSeleccionados.includes(paciente.id)}
-                    />
-                  </td>
-                  <td>
-                    <div className='iconodelete'>
-                      {/* Renderiza el botón para eliminar pacientes y le pasa la función handleEliminarPaciente */}
-                      <Boton_delete_paciente handleEliminarPaciente={handleEliminarPaciente} />
-                    </div>
-                    <div className='iconoperfil'>
-                      {/* Renderiza el botón para ver el perfil de pacientes y le pasa la función handleSeleccionarPaciente */}
-                      <BotonPerfil
-                        habilitado={alMenosUnoSeleccionado}
-                        handleSeleccionarPaciente={handleSeleccionarPaciente}
-                      />
-                    </div>
->>>>>>> 5dccfb3ce6f2766d32f3240f5e8c3e839cf6f09c
                   </td>
                 </tr>
               ))}
