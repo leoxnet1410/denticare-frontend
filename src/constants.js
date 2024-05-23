@@ -1,4 +1,5 @@
 export const TREATMENTS = [
+  "Caries",
   "Endodoncia",
   "Exodoncia",
   "Limpieza",
@@ -9,5 +10,12 @@ export const TREATMENTS = [
   "Blanqueamiento",
   "Implante",
   "Otro"
+]
 
+export const PROCEDURES = [
+  "Tratamiento Principal",
+  "Imagenologia",
+  "Medicacion/Anestesia",
+  "Protesis/Implante",
+  
 ]

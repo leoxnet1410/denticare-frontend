@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Card, Col, ListGroup, ListGroupItem, Row, Table, Tabs, Tab, Badge } from 'react-bootstrap';
 import { useParams } from 'react-router-dom';
 import { ApiClient } from '../../api/ApiClient';
+import { StatusBadge } from '../../components/StatusBadge';
 
 export const PatientShow = () => {
   const { id } = useParams();
@@ -80,7 +81,7 @@ export const PatientShow = () => {
                           <tr className={details?.id === appointment.id ? 'bg-info' : ""} key={index} onClick={() => handleDetailClick(appointment)}>
                             <td>{appointment.date}</td>
                             <td>{appointment.observations}</td>
-                            <td>{appointment.status}</td>
+                            <td><StatusBadge status={appointment.status} /></td>
                           </tr>
                           {
                             details && details.id === appointment.id && (

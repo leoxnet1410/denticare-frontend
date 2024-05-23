@@ -4,6 +4,7 @@ import { Patients } from './Pages/Patients'
 import { Appointments } from './Pages/Appointments'
 import { BasicLayout } from './Layout/Basic'
 import { PatientShow } from './Pages/patients/Show'
+import { Billing } from './Pages/billing/Billing'
 
 
 
@@ -18,6 +19,7 @@ function App() {
           <Route path="/patients" element={<Patients />} />
           <Route path="/patients/:id" element={<PatientShow />} />
           <Route path="/appointments" element={<Appointments />} />
+          <Route path="/billing" element={<Billing />} />
         </Route>
         {/* <Route path="welcome" element={<Welcome />} />
         <Route path="/login" element={<LoginForm />} />

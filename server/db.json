@@ -61,6 +61,28 @@
       "status": "Agendada",
       "observations": "Limpieza basica",
       "treatment": "Limpieza"
+    },
+    {
+      "status": "Cancelada",
+      "closingNotes": "Cliente llamo para cancelar cita",
+      "id": "a72a",
+      "date": "2024-05-25",
+      "patient": "Rafael Castillo",
+      "time": "16:00",
+      "observations": "12345",
+      "treatment": "Endodoncia",
+      "patient_id": "a231"
+    },
+    {
+      "id": "0cfd",
+      "patient": "Elizabeth  Chaca Diaz",
+      "patient_id": "5c34",
+      "date": "2024-05-26",
+      "time": "12:00",
+      "status": "Agendada",
+      "observations": "Caries en Pieza 38",
+      "treatment": "Caries"
     }
-  ]
+  ],
+  "bills":[]
 }

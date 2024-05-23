@@ -49,7 +49,7 @@ export const Appointments = () => {
         ...appointment,
         start: startTime.toDate(),
         end: endTime.toDate(),
-        title: appointment.patient
+        title: `${appointment.patient}`
 
       }
     )
@@ -61,7 +61,7 @@ export const Appointments = () => {
       classValue = 'bg-primary border-0 rounded-0'
     }
     else if (event.status === 'Completada') {
-      classValue = 'bg-success text-white border-0 rounded-0'
+      classValue = 'bg-success border-0 rounded-0'
     }
     else {
       classValue = 'bg-danger border-0 rounded-0'
@@ -69,6 +69,24 @@ export const Appointments = () => {
     return ({
       className: classValue,
     })
+  }
+
+  const CustomMonthEvent = ({ event }) => {
+    return (
+      <div>
+        <p className='mb-0' style={{fontSize:14}}>{event.time} {event.title}</p>
+
+      </div>
+    );
+  }
+
+  const CustomWeekEvent = ({ event }) => {
+    return (
+      <div>
+        <p className='mb-0' style={{fontSize:14}}>{event.title} - {event.treatment}</p>
+
+      </div>
+    );
   }
   const minTime = new Date();
   minTime.setHours(8, 0, 0);
@@ -100,6 +118,15 @@ export const Appointments = () => {
             max={maxTime}
             onSelectEvent={(event) => setCurrentEvent(event)}
             eventPropGetter={eventTypeGetter}
+            components={{
+              month: {
+                event: CustomMonthEvent
+              },
+              week: {
+                event: CustomWeekEvent
+              }
+
+            }}
 
 
           />

@@ -35,6 +35,11 @@ export const NavigationBar = () => {
                 Citas
               </Link>
             </li>
+            <li className="pacientes">
+              <Link className="nav-link " to="/billing">
+                Facturacion
+              </Link>
+            </li>
             <li className="login">
               <Link className="nav-link " to="Login">
                 Login
