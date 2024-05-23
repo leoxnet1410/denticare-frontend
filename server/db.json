@@ -1,0 +1,23 @@
+{
+  "patients": [
+    {
+      "id": "d127",
+      "first_name": "Rafael",
+      "last_name": "Castillo",
+      "ci": "12345678",
+      "age": "33",
+      "phone": "1234567",
+      "gender": ""
+    }
+  ],
+  "appointments": [
+    {
+      "id": "dc42",
+      "patient": "Rafael Castillo",
+      "patient_id": "d127",
+      "date": "2024-05-23",
+      "time": "09:00",
+      "observations": "Conducto"
+    }
+  ]
+}

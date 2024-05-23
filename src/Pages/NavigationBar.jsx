@@ -26,8 +26,13 @@ export const NavigationBar = () => {
               </Link>
             </li>
             <li className="pacientes">
-              <Link className="nav-link " to="Pacientes">
+              <Link className="nav-link " to="/patients">
                 Pacientes
+              </Link>
+            </li>
+            <li className="pacientes">
+              <Link className="nav-link " to="/appointments">
+                Citas
               </Link>
             </li>
             <li className="login">
