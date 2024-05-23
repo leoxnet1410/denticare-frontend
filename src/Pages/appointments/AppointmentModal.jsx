@@ -15,6 +15,10 @@ export const AppointmentModal = ({ appointment, setAppointment, onUpdate }) => {
     setAppointment(null)
   }
 
+  const totalCost = useMemo(() => {
+    return procedures.reduce((acc, obj) => acc + obj.cost, 0)
+  }, [procedures])
+
   const updateAppointment = (status) => {
     const { id, date, patient, time, observations, treatment, patient_id } = appointment
     const data = {
@@ -23,9 +27,26 @@ export const AppointmentModal = ({ appointment, setAppointment, onUpdate }) => {
       id, date, patient, time, observations, treatment, patient_id
     }
     ApiClient.appointments.update(appointment.id, data).then(() => {
-      onUpdate()
-      setAppointment(null)
+      console.log(status)
+      if (status === "Completada") {
+        let billingData = {
+          patient_id: appointment.patient_id,
+          appointment_id: appointment.id,
+          procedures,
+          totalCost: totalCost,
+          date: new Date().toLocaleDateString()
+        }
+        ApiClient.billings.create(billingData).then(() => {
+          onUpdate()
+         
+          setAppointment(null)
+          setStage('event')
+        })
+
+      }
+
     })
+
   }
 
   const handleProcedureChange = (index, attribute, value) => {
@@ -40,9 +61,9 @@ export const AppointmentModal = ({ appointment, setAppointment, onUpdate }) => {
     setProcedures(newProcedures)
   }
 
-  const totalCost = useMemo(() => {
-    return procedures.reduce((acc, obj) => acc + obj.cost, 0)
-  }, [procedures])
+
+
+
 
 
   return (
@@ -182,7 +203,7 @@ export const AppointmentModal = ({ appointment, setAppointment, onUpdate }) => {
       </Modal.Body>
       <Modal.Footer>
         {stage === 'billing' && <Button size='sm' variant='warning'>Volver</Button>}
-        {stage === 'billing' && <Button size='sm' variant='success'>Completar</Button>}
+        {stage === 'billing' && <Button size='sm' variant='success' onClick={()=>updateAppointment('Completada')}>Completar</Button>}
       </Modal.Footer>
     </Modal>
   )

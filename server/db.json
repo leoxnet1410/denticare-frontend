@@ -22,67 +22,40 @@
   "appointments": [
     {
       "status": "Completada",
-      "closingNotes": "Si vino",
-      "id": "731a",
+      "closingNotes": "Removida",
+      "id": "75e3",
       "date": "2024-05-23",
       "patient": "Rafael Castillo",
-      "time": "12:00",
-      "observations": "1234",
-      "treatment": "Endodoncia",
+      "time": "16:00",
+      "observations": "Pieza 36",
+      "treatment": "Caries",
       "patient_id": "a231"
     },
     {
-      "status": "Cancelada",
-      "closingNotes": "No vino",
-      "id": "2f88",
-      "date": "2024-05-23",
-      "patient": "Rafael Castillo",
-      "time": "17:00",
-      "observations": "1231412",
-      "treatment": "Endodoncia",
-      "patient_id": "a231"
-    },
-    {
-      "id": "88b8",
-      "patient": "Rafael Castillo",
-      "patient_id": "a231",
-      "date": "2024-05-23",
-      "time": "13:00",
-      "status": "Agendada",
-      "observations": "Revision Inicial",
-      "treatment": "Consulta"
-    },
-    {
-      "id": "7586",
+      "id": "018d",
       "patient": "Elizabeth  Chaca Diaz",
       "patient_id": "5c34",
       "date": "2024-05-24",
-      "time": "16:00",
+      "time": "13:00",
       "status": "Agendada",
-      "observations": "Limpieza basica",
-      "treatment": "Limpieza"
-    },
-    {
-      "status": "Cancelada",
-      "closingNotes": "Cliente llamo para cancelar cita",
-      "id": "a72a",
-      "date": "2024-05-25",
-      "patient": "Rafael Castillo",
-      "time": "16:00",
-      "observations": "12345",
-      "treatment": "Endodoncia",
-      "patient_id": "a231"
-    },
-    {
-      "id": "0cfd",
-      "patient": "Elizabeth  Chaca Diaz",
-      "patient_id": "5c34",
-      "date": "2024-05-26",
-      "time": "12:00",
-      "status": "Agendada",
-      "observations": "Caries en Pieza 38",
-      "treatment": "Caries"
+      "observations": "Comienzo de la endodoncia",
+      "treatment": "Endodoncia"
     }
   ],
-  "bills":[]
+  "billings": [
+    {
+      "id": "20a8",
+      "patient_id": "a231",
+      "appointment_id": "75e3",
+      "procedures": [
+        {
+          "name": "Tratamiento Principal",
+          "cost": 50,
+          "qty": 1
+        }
+      ],
+      "totalCost": 50,
+      "date": "23/5/2024"
+    }
+  ]
 }

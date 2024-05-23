@@ -8,6 +8,7 @@ export const PatientShow = () => {
   const { id } = useParams();
   const [patient, setPatient] = useState(null)
   const [appointments, setAppointments] = useState([])
+  const [billings, setBillings] = useState([])
   const [details, setDetails] = useState(null)
   useEffect(() => {
     if (patient) {
@@ -28,6 +29,9 @@ export const PatientShow = () => {
   useEffect(() => {
     ApiClient.patients.find(id).then(res => {
       setPatient(res)
+    })
+    ApiClient.billings.all({ patient_id: id }).then(res => {
+      setBillings(res)
     })
   }, [])
   if (patient) {
@@ -105,8 +109,63 @@ export const PatientShow = () => {
 
               </div>
             </Tab>
-            <Tab eventKey="history" title="Historia">
+            <Tab eventKey="history" title="Facturacion">
+              <div className="p-2">
+                <Row>
+                  <Col sm={6}>
+                    <Card>
+                      <Card.Header>Servicios</Card.Header>
+                      <Card.Body>
+                        <Table size='sm'>
+                          <thead>
+                            <tr>
+                              <th>Fecha</th>
+                              <th>Descripcion</th>
+                              <th>Monto</th>
 
+                            </tr>
+                          </thead>
+                          <tbody>
+                            {
+                              billings.map((billing, index) => (
+                                <tr key={index}>
+                                  <td>{billing.date}</td>
+                                  <td>{appointments?.find(x => x.id === billing.appointment_id)?.treatment}</td>
+                                  <td>{billing.totalCost}</td>
+                                </tr>
+                              ))
+                            }
+                          </tbody>
+                        </Table>
+                      </Card.Body>
+                    </Card>
+
+                  </Col>
+                  <Col sm={6}>
+                    <Card>
+                      <Card.Header>Pagos Realizados</Card.Header>
+                      <Card.Body>
+                        <Table size='sm'>
+                          <thead>
+                            <tr>
+                              <th>Fecha</th>
+                              <th>Monto</th>
+                              <th>Tipo</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td>1</td>
+                              <td>2</td>
+                              <td>3</td>
+                            </tr>
+                          </tbody>
+                        </Table>
+                      </Card.Body>
+                    </Card>
+                  </Col>
+                </Row>
+              </div>
             </Tab>
           </Tabs>
         </Col>

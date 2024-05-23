@@ -17,5 +17,5 @@ export const PROCEDURES = [
   "Imagenologia",
   "Medicacion/Anestesia",
   "Protesis/Implante",
-  
+
 ]
