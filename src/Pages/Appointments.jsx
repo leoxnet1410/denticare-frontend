@@ -3,15 +3,18 @@ import React, { useState, useEffect } from 'react';
 import { Calendar, momentLocalizer } from 'react-big-calendar'
 import { Button, Card } from 'react-bootstrap'
 import 'react-big-calendar/lib/css/react-big-calendar.css'
-import moment from 'moment'
+
 import EventModal from '../components/EventModal';
 import { ApiClient } from '../api/ApiClient';
-
+import moment from 'moment'
+import 'moment/dist/locale/es';
+import { AppointmentModal } from './appointments/AppointmentModal';
+moment.locale("es");
 
 const localizer = momentLocalizer(moment)
 
-
 export const Appointments = () => {
+  const [currentEvent, setCurrentEvent] = useState(null)
   const [appointments, setAppointments] = useState([])
   const messages = { // new
     allDay: 'Todo el dia',
@@ -43,12 +46,30 @@ export const Appointments = () => {
     const endTime = startTime.clone().add(1, 'hour');
     return (
       {
+        ...appointment,
         start: startTime.toDate(),
         end: endTime.toDate(),
         title: appointment.patient
+
       }
     )
   })
+
+  const eventTypeGetter = (event, start, end, isSelected) => {
+    let classValue;
+    if (event.status === 'Agendada') {
+      classValue = 'bg-primary border-0 rounded-0'
+    }
+    else if (event.status === 'Completada') {
+      classValue = 'bg-success text-white border-0 rounded-0'
+    }
+    else {
+      classValue = 'bg-danger border-0 rounded-0'
+    }
+    return ({
+      className: classValue,
+    })
+  }
   const minTime = new Date();
   minTime.setHours(8, 0, 0);
   const maxTime = new Date();
@@ -61,11 +82,12 @@ export const Appointments = () => {
         <Card.Header className='d-flex flex-row justify-content-between align-items-center'>
           <h2>Citas</h2>
           <EventModal onCreate={refreshAppointments} />
-
+          <AppointmentModal onUpdate={refreshAppointments} appointment={currentEvent} setAppointment={setCurrentEvent} />
         </Card.Header>
         <Card.Body>
-       
+
           <Calendar
+            culture='es'
             messages={messages}
             localizer={localizer}
             defaultDate={new Date()}
@@ -76,9 +98,10 @@ export const Appointments = () => {
             style={{ height: 700 }}
             min={minTime}
             max={maxTime}
+            onSelectEvent={(event) => setCurrentEvent(event)}
+            eventPropGetter={eventTypeGetter}
 
 
-            culture='es'
           />
         </Card.Body>
       </Card>

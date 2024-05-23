@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Button, ButtonGroup, Card, Table } from "react-bootstrap";
 import { PatientForm } from "../Forms/Patient";
 import { ApiClient } from "../api/ApiClient";
+import { Link } from 'react-router-dom';
 
 export const Patients = () => {
   const [patients, setPatients] = useState([])
@@ -51,7 +52,7 @@ export const Patients = () => {
                 <td>{patient.phone}</td>
                 <td>
                   <ButtonGroup>
-                    <Button size='sm' variant="outline-success"><FontAwesomeIcon icon='fa fa-eye' className='me-2' />Ver</Button>
+                    <Button as={Link} to={`/patients/${patient.id}`} size='sm' variant="outline-success"><FontAwesomeIcon icon='fa fa-eye' className='me-2' />Ver</Button>
                     <Button size='sm' variant="outline-primary"><FontAwesomeIcon icon='fa fa-pencil' className='me-2' />Editar</Button>
                     <Button size='sm' variant="outline-danger" onClick={() => deletePatient(patient.id)}><FontAwesomeIcon icon='fa fa-eye' className='me-2' />Eliminar</Button>
                   </ButtonGroup>

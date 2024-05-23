@@ -1,23 +1,66 @@
 {
   "patients": [
     {
-      "id": "d127",
+      "id": "a231",
       "first_name": "Rafael",
       "last_name": "Castillo",
-      "ci": "12345678",
-      "age": "33",
-      "phone": "1234567",
-      "gender": ""
+      "ci": "11611820",
+      "age": "37",
+      "phone": "62109941",
+      "gender": "M"
+    },
+    {
+      "id": "5c34",
+      "first_name": "Elizabeth ",
+      "last_name": "Chaca Diaz",
+      "ci": "9849630",
+      "age": "31",
+      "phone": "72162155",
+      "gender": "F"
     }
   ],
   "appointments": [
     {
-      "id": "dc42",
-      "patient": "Rafael Castillo",
-      "patient_id": "d127",
+      "status": "Completada",
+      "closingNotes": "Si vino",
+      "id": "731a",
       "date": "2024-05-23",
-      "time": "09:00",
-      "observations": "Conducto"
+      "patient": "Rafael Castillo",
+      "time": "12:00",
+      "observations": "1234",
+      "treatment": "Endodoncia",
+      "patient_id": "a231"
+    },
+    {
+      "status": "Cancelada",
+      "closingNotes": "No vino",
+      "id": "2f88",
+      "date": "2024-05-23",
+      "patient": "Rafael Castillo",
+      "time": "17:00",
+      "observations": "1231412",
+      "treatment": "Endodoncia",
+      "patient_id": "a231"
+    },
+    {
+      "id": "88b8",
+      "patient": "Rafael Castillo",
+      "patient_id": "a231",
+      "date": "2024-05-23",
+      "time": "13:00",
+      "status": "Agendada",
+      "observations": "Revision Inicial",
+      "treatment": "Consulta"
+    },
+    {
+      "id": "7586",
+      "patient": "Elizabeth  Chaca Diaz",
+      "patient_id": "5c34",
+      "date": "2024-05-24",
+      "time": "16:00",
+      "status": "Agendada",
+      "observations": "Limpieza basica",
+      "treatment": "Limpieza"
     }
   ]
 }

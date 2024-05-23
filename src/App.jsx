@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { Patients } from './Pages/Patients'
 import { Appointments } from './Pages/Appointments'
 import { BasicLayout } from './Layout/Basic'
+import { PatientShow } from './Pages/patients/Show'
 
 
 
@@ -15,6 +16,7 @@ function App() {
 
         <Route element={<BasicLayout />}>
           <Route path="/patients" element={<Patients />} />
+          <Route path="/patients/:id" element={<PatientShow />} />
           <Route path="/appointments" element={<Appointments />} />
         </Route>
         {/* <Route path="welcome" element={<Welcome />} />

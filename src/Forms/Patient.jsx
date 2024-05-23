@@ -3,7 +3,7 @@ import { Button, FormGroup, Modal, Form, Row, Col, FormSelect } from 'react-boot
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { ApiClient } from '../api/ApiClient';
 
-export const PatientForm = ({onCreate}) => {
+export const PatientForm = ({ onCreate }) => {
   const [first_name, setFirstname] = useState("");
   const [last_name, setLastname] = useState("");
   const [ci, setCi] = useState("");
@@ -23,10 +23,10 @@ export const PatientForm = ({onCreate}) => {
       onCreate()
       handleClose()
     })
-    .finally(()=>{
-      handleClose()
-    
-    })
+      .finally(() => {
+        handleClose()
+
+      })
   }
   return (
     <>
@@ -66,7 +66,7 @@ export const PatientForm = ({onCreate}) => {
               <Col sm={6}>
                 <FormGroup className='mb-2'>
                   <label>Sexo</label>
-                  <FormSelect size='sm' type='text'>
+                  <FormSelect value={gender} onChange={({ target }) => setGender(target.value)} size='sm' type='text'>
                     <option value="">Select...</option>
                     <option value="F">Femenino</option>
                     <option value="M">Masculino</option>
