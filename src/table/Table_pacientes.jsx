@@ -11,6 +11,7 @@ const Table_pacientes = () => {
   const [pacientes, setPacientes] = useState([]);
   const [pacientesSeleccionados, setPacientesSeleccionados] = useState([]);
   const [alMenosUnoSeleccionado, setAlMenosUnoSeleccionado] = useState(false);
+  const [searchTerm, setSearchTerm] = useState('');
 
   // Efecto que se ejecuta al montar el componente para cargar la lista de pacientes
   useEffect(() => {
@@ -60,6 +61,17 @@ const Table_pacientes = () => {
     // Por ejemplo: history.push(`/perfil/${pacienteId}`);
   };
 
+  // Función para manejar el cambio del término de búsqueda
+  const handleSearchChange = (event) => {
+    setSearchTerm(event.target.value);
+  };
+
+  // Filtrar pacientes según el término de búsqueda
+  const pacientesFiltrados = pacientes.filter(paciente =>
+    paciente.first_name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+    paciente.last_name.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+
   return (
     <div style={{ marginTop: '2%', maxWidth: '50%', marginLeft: '25%' }}>
       <Card>
@@ -77,7 +89,13 @@ const Table_pacientes = () => {
                 <Form inline>
                   <Row>
                     <Col xs="auto">
-                      <Form.Control type="text" placeholder="Buscar" className="mr-sm-2" />
+                      <Form.Control
+                        type="text"
+                        placeholder="Buscar"
+                        className="mr-sm-2"
+                        value={searchTerm}
+                        onChange={handleSearchChange}
+                      />
                     </Col>
                   </Row>
                 </Form>
@@ -95,7 +113,7 @@ const Table_pacientes = () => {
               </tr>
             </thead>
             <tbody>
-              {pacientes.map((paciente, index) => (
+              {pacientesFiltrados.map((paciente, index) => (
                 <tr key={index}>
                   <td style={{ textTransform: 'capitalize' }}>{paciente.first_name}</td>
                   <td style={{ textTransform: 'capitalize' }}>{paciente.last_name}</td>
@@ -107,7 +125,7 @@ const Table_pacientes = () => {
                       onClick={() => handleEliminarPaciente(paciente.id)}
                       style={{ cursor: 'pointer', marginRight: '10px' }}
                     />
-                    <Link to={`/Perfil`}>
+                    <Link to={`/consulta`}>
                       <FontAwesomeIcon
                         icon={faUserCircle}
                         className="text-primary"

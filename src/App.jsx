@@ -8,9 +8,10 @@ import { Barra_navegacion } from "./Pages/Barra_navegacion";
 import Table_pacientes from "./table/Table_pacientes";
 import { Table_usuarios } from "./table/table_usuarios";
 import Perfil from "./Perfil/Perfil";
-import Forms_create from './Forms/forms_create'; // Only one import statement
+import Tareas from './Forms/tareas'; // Only one import statement
 import Tratamientos from './Perfil/tratamientos';
 
+import Consulta from './Perfil/consulta';
 
 function App() {
   return (
@@ -22,7 +23,7 @@ function App() {
          
           </Col>
         </Row>
-        <Row className='p-5'>
+        <Row className=''>
           <Routes>
             <Route path="/" element={<LoginForm />} />
             <Route path="/table_usuarios" element={<Table_usuarios />} />
@@ -30,8 +31,10 @@ function App() {
             <Route path="/table_pacientes" element={<Table_pacientes />} />
             <Route path="/crear_paciente" element={<Crear_paciente />} />
             <Route path="/perfil" element={<Perfil />} />
-            <Route path="/forms_create" element={<Forms_create />} />
+            <Route path="/tareas" element={<Tareas />} />
             <Route path="/tratamientos" element={<Tratamientos/>} />
+           
+            <Route path="/consulta" element={<Consulta/>} />
           </Routes>
         </Row>
       </Container>

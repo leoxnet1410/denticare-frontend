@@ -116,9 +116,8 @@ export const apiClient = {
                 throw error;
             }
         }
-    }
-}
-const notes = {
+    },
+notes :{
     create: async (newNoteData) => {
       try {
         const response = await axios.post(url + "/notes", newNoteData);
@@ -155,6 +154,7 @@ const notes = {
         throw error;
       }
     },
+},
   
   treatments: {
     create: async () => {
@@ -193,5 +193,44 @@ const notes = {
             throw error;
         }
     }
+},
+
+  tareas:{
+  create: async (nuevaTarea) => {
+    try {
+      const respuesta = await axios.post(`${url}/tareas`, nuevaTarea);
+      return respuesta.data;
+    } catch (error) {
+      console.error("Error al crear una tarea:", error);
+      throw error;
+    }
+  },
+  update: async (tareaId, updatedData) => {
+    try {
+      const respuesta = await axios.patch(`${url}/tareas/${tareaId}`, updatedData);
+      return respuesta.data;
+    } catch (error) {
+      console.error("Error al actualizar una tarea:", error);
+      throw error;
+    }
+  },
+  delete: async (tareaId) => {
+    try {
+      const respuesta = await axios.delete(`${url}/tareas/${tareaId}`);
+      return respuesta.data;
+    } catch (error) {
+      console.error("Error al eliminar una tarea:", error);
+      throw error;
+    }
+  },
+  getAll: async () => {
+    try {
+      const respuesta = await axios.get(`${url}/tareas`);
+      return respuesta.data;
+    } catch (error) {
+      console.error("Error al obtener la lista de tareas:", error);
+      throw error;
+    }
+  }
 }
-}
+};

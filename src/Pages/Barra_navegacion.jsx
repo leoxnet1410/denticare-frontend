@@ -13,7 +13,7 @@ export const Barra_navegacion = () => {
   return (
     <nav class="navbar navbar-expand-lg  bg-white">
       <div className="container">
-        <span className="encabezado" >
+        <span  >
           Denticare <FontAwesomeIcon icon={faTooth} />
         </span>
         <button
@@ -56,7 +56,7 @@ export const Barra_navegacion = () => {
               </Link>
             </li>
             <li className="nav-item perfil">
-              <Link className="nav-link" to="/forms_create">
+              <Link className="nav-link" to="/tareas">
                Agenda
               </Link>
             </li>

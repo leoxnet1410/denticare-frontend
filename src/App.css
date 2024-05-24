@@ -456,3 +456,41 @@ td {
     text-decoration: none;
     margin-top: -30px;
   }
+  .consulta-container {
+    padding: 20px;
+    background-color: #f8f9fa; /* Color de fondo del contenedor */
+  }
+  
+  
+  
+  .table-container {
+    margin-top: 20px;
+    max-height: 300px; /* Define la altura máxima del contenedor */
+    overflow-y: auto; /* Desplazamiento vertical */
+    overflow-x: hidden; /* Evita el desplazamiento horizontal */
+  }
+  .consulta-table {
+    background-color: white; /* Fondo blanco para la tabla */
+    border-collapse: collapse; /* Colapsar bordes para hacer líneas transparentes */
+    width: 100%; /* Hacer que la tabla ocupe todo el ancho del contenedor */
+  }
+  
+  .consulta-table th,
+  .consulta-table td {
+    border: 1px solid transparent; /* Bordes transparentes */
+  }
+  
+  .consulta-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .consulta-header div {
+    font-size: 18px;
+  }
+  
+  .date-picker-wrapper {
+    display: inline-block;
+  }

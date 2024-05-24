@@ -16,8 +16,7 @@ const LoginForm = () => {
             <div className="social-icons">
               <a href="#" className="icon"><FontAwesomeIcon icon={faGooglePlusG} /></a>
               <a href="#" className="icon"><FontAwesomeIcon icon={faFacebookF} /></a>
-              <a href="#" className="icon"><FontAwesomeIcon icon={faGithub} /></a>
-              <a href="#" className="icon"><FontAwesomeIcon icon={faLinkedinIn} /></a>
+            
             </div>
             <span> Usa tu correo electrónico para registrarte</span>
             <input type="text" placeholder="Nombre" />
@@ -34,8 +33,7 @@ const LoginForm = () => {
             <div className="social-icons">
               <a href="#" className="icon"><FontAwesomeIcon icon={faGooglePlusG} /></a>
               <a href="#" className="icon"><FontAwesomeIcon icon={faFacebookF} /></a>
-              <a href="#" className="icon"><FontAwesomeIcon icon={faGithub} /></a>
-              <a href="#" className="icon"><FontAwesomeIcon icon={faLinkedinIn} /></a>
+         
             </div>
             <span>o usa tu correo electrónico y contraseña</span>
             <input type="email" placeholder="Correo electrónico" />

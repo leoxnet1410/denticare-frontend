@@ -1,38 +1,38 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { Card } from 'react-bootstrap';
-import CrearTratamiento from '../Forms/Crear_tratamientos'; // Importa el componente para crear tratamientos
-import BotonDeleteTratamientos from '../Perfil/boton_delete_tratamientos'; // Importa el botón para eliminar tratamientos
+import { Card, Button } from 'react-bootstrap'; // Importa Button de react-bootstrap
+import CrearTratamiento from '../Forms/Crear_tratamientos';
+import BotonDeleteTratamientos from '../Perfil/boton_delete_tratamientos';
 
 const url = 'http://localhost:3200'; // URL de la API
 
 const Tratamientos = () => {
-  const [treatments, setTreatments] = useState([]); // Estado para almacenar la lista de tratamientos
+  const [treatments, setTreatments] = useState([]);
 
-  // Efecto que se ejecuta al montar el componente para cargar la lista de tratamientos
   useEffect(() => {
     cargarTratamientos();
   }, []);
 
-  // Función para cargar la lista de tratamientos desde la API
   const cargarTratamientos = async () => {
     try {
       const response = await axios.get(`${url}/treatments`);
-      setTreatments(response.data); // Almacena los tratamientos en el estado
+      setTreatments(response.data);
     } catch (error) {
       console.error('Error al obtener la lista de tratamientos:', error);
     }
   };
 
-  // Función para manejar la creación de un nuevo tratamiento
   const handleTratamientoCreado = (nuevoTratamiento) => {
-    setTreatments([...treatments, nuevoTratamiento]); // Agrega el nuevo tratamiento a la lista
+    setTreatments([...treatments, nuevoTratamiento]);
   };
 
-  // Función para manejar la eliminación de un tratamiento
   const handleTratamientoEliminado = (tratamientoId) => {
-    // Actualiza la lista de tratamientos después de eliminar uno
     setTreatments(treatments.filter((treatment) => treatment.id !== tratamientoId));
+  };
+
+  const handlePacienteEditado = (pacienteId) => {
+    // Aquí puedes manejar la acción de edición del paciente
+    console.log(`Editar paciente con ID: ${pacienteId}`);
   };
 
   return (
@@ -43,7 +43,6 @@ const Tratamientos = () => {
             <span className="text-white">
               Tratamientos
             </span>
-            {/* Renderiza el componente para crear tratamientos y le pasa la función handleTratamientoCreado */}
             <CrearTratamiento onTratamientoCreado={handleTratamientoCreado} />
           </Card.Header>
         </div>
@@ -62,11 +61,15 @@ const Tratamientos = () => {
                   <td>{treatment.name}</td>
                   <td>{`$${treatment.amount}`}</td>
                   <td>
-                    {/* Renderiza el botón para eliminar tratamientos y le pasa el tratamientoId y la función handleTratamientoEliminado */}
+                    {/* Botón para eliminar tratamientos */}
                     <BotonDeleteTratamientos
                       tratamientoId={treatment.id}
                       onTratamientoEliminado={handleTratamientoEliminado}
                     />
+                    {/* Botón para editar pacientes */}
+                    <Button variant="primary" onClick={() => handlePacienteEditado(treatment.id)}>
+                      Editar
+                    </Button>
                   </td>
                 </tr>
               ))}
