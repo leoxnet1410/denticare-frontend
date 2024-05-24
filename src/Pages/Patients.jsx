@@ -34,8 +34,8 @@ export const Patients = () => {
         <thead>
           <tr>
             <th >CI</th>
-            <th >Nombres</th>
-            <th >Apellidos</th>
+            <th>Nombre</th>
+
             <th>Edad</th>
             <th>Telefono</th>
             <th style={{ width: '20%' }}>Acciones</th>
@@ -46,8 +46,7 @@ export const Patients = () => {
             patients.map((patient, index) => (
               <tr>
                 <th scope="row">{patient.ci}</th>
-                <td>{patient.first_name}</td>
-                <td>{patient.last_name}</td>
+                <td>{patient.name}</td>
                 <td>{patient.age}</td>
                 <td>{patient.phone}</td>
                 <td>

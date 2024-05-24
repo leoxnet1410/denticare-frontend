@@ -1,6 +1,6 @@
 import axios, { all } from 'axios';
 
-const API_URL = 'http://localhost:5000';
+const API_URL = 'http://localhost:3000';
 export const ApiClient = {
   patients: {
     create: async (data) => {
@@ -36,14 +36,25 @@ export const ApiClient = {
       return res.data
     },
   },
-  billings: {
+  bills: {
     create: async (data) => {
-      const res = await axios.post(API_URL + '/billings', data)
+      const res = await axios.post(API_URL + '/bills', data)
       return res.data
     },
     all: async (params = {}) => {
       params = new URLSearchParams(params).toString()
-      const res = await axios.get(API_URL + '/billings?' + params)
+      const res = await axios.get(API_URL + '/bills?' + params)
+      return res.data
+    }
+  },
+  payments:{
+    create: async (data) => {
+      const res = await axios.post(API_URL + '/payments', data)
+      return res.data
+    },
+    all: async (params = {}) => {
+      params = new URLSearchParams(params).toString()
+      const res = await axios.get(API_URL + '/payments?' + params)
       return res.data
     }
   }

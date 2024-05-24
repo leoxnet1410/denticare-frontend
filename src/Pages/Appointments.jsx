@@ -42,14 +42,16 @@ export const Appointments = () => {
   }, [])
 
   const events = appointments.map((appointment) => {
-    const startTime = moment(appointment.date + 'T' + appointment.time);
-    const endTime = startTime.clone().add(1, 'hour');
+    const startTime = new Date(appointment.date)
+    const clonedDate = new Date(startTime);
+    clonedDate.setHours(clonedDate.getHours() + 1);
+    console.log(startTime)
     return (
       {
         ...appointment,
-        start: startTime.toDate(),
-        end: endTime.toDate(),
-        title: `${appointment.patient}`
+        start: startTime,
+        end: clonedDate,
+        title: `${appointment.patient_name}`
 
       }
     )
@@ -74,7 +76,7 @@ export const Appointments = () => {
   const CustomMonthEvent = ({ event }) => {
     return (
       <div>
-        <p className='mb-0' style={{fontSize:14}}>{event.time} {event.title}</p>
+        <p className='mb-0' style={{ fontSize: 14 }}>{event.time} {event.title}</p>
 
       </div>
     );
@@ -83,7 +85,7 @@ export const Appointments = () => {
   const CustomWeekEvent = ({ event }) => {
     return (
       <div>
-        <p className='mb-0' style={{fontSize:14}}>{event.title} - {event.treatment}</p>
+        <p className='mb-0' style={{ fontSize: 14 }}>{event.title} </p>
 
       </div>
     );

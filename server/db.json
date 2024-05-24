@@ -22,40 +22,83 @@
   "appointments": [
     {
       "status": "Completada",
-      "closingNotes": "Removida",
-      "id": "75e3",
+      "closingNotes": "1231",
+      "id": "8756",
       "date": "2024-05-23",
       "patient": "Rafael Castillo",
-      "time": "16:00",
-      "observations": "Pieza 36",
+      "time": "17:00",
+      "observations": "1231",
       "treatment": "Caries",
       "patient_id": "a231"
     },
     {
-      "id": "018d",
+      "status": "Completada",
+      "closingNotes": "Falta 1 sesion",
+      "id": "6b8b",
+      "date": "2024-05-26",
       "patient": "Elizabeth  Chaca Diaz",
-      "patient_id": "5c34",
-      "date": "2024-05-24",
-      "time": "13:00",
-      "status": "Agendada",
-      "observations": "Comienzo de la endodoncia",
-      "treatment": "Endodoncia"
+      "time": "15:00",
+      "observations": "NANANANNA",
+      "treatment": "Endodoncia",
+      "patient_id": "5c34"
     }
   ],
   "billings": [
     {
-      "id": "20a8",
+      "id": "309c",
       "patient_id": "a231",
-      "appointment_id": "75e3",
-      "procedures": [
-        {
-          "name": "Tratamiento Principal",
-          "cost": 50,
-          "qty": 1
-        }
-      ],
+      "appointment_id": "8756",
+      "description": "Tratamiento Principal",
+      "totalCost": 122,
+      "date": "23/5/2024"
+    },
+    {
+      "id": "8390",
+      "patient_id": "a231",
+      "appointment_id": "8756",
+      "description": "Imagenologia",
+      "totalCost": 232,
+      "date": "23/5/2024"
+    },
+    {
+      "id": "f3f3",
+      "patient_id": "5c34",
+      "appointment_id": "6b8b",
+      "description": "Tratamiento Principal",
+      "totalCost": 400,
+      "date": "23/5/2024"
+    },
+    {
+      "id": "143e",
+      "patient_id": "5c34",
+      "appointment_id": "6b8b",
+      "description": "Imagenologia",
       "totalCost": 50,
       "date": "23/5/2024"
+    },
+    {
+      "id": "a9ee",
+      "patient_id": "5c34",
+      "appointment_id": "6b8b",
+      "description": "Medicacion/Anestesia",
+      "totalCost": 80,
+      "date": "23/5/2024"
+    }
+  ],
+  "payments": [
+    {
+      "id": "b68f",
+      "patient_id": "a231",
+      "date": "2024-05-23",
+      "type": "BNB",
+      "amount": 354
+    },
+    {
+      "id": "e3c6",
+      "patient_id": "5c34",
+      "date": "2024-05-23",
+      "type": "BNB",
+      "amount": 530
     }
   ]
 }

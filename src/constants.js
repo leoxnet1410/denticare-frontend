@@ -13,9 +13,23 @@ export const TREATMENTS = [
 ]
 
 export const PROCEDURES = [
-  "Tratamiento Principal",
-  "Imagenologia",
-  "Medicacion/Anestesia",
-  "Protesis/Implante",
+  "Consulta",
+  "Caries",
+  "Radiografia",
+  "Medicacion",
+  "Implante",
+  "Protesis",
+  "Periodoncia",
+  "Ortodoncia",
+  "Endodoncia",
+  "Exodoncia",
+  "Blanqueamiento",
+  "Cirugia"
 
+]
+export const PAYMENT_TYPES = [
+  "Efectivo",
+  "BNB",
+  "Ganadero",
+  "Mercantil"
 ]

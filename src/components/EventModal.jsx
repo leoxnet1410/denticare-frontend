@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import Button from 'react-bootstrap/Button';
 import moment from 'moment';
-import { Modal, Form, FormGroup, FormSelect, FormControl } from 'react-bootstrap';
+import { Modal, Form, FormGroup, FormSelect, FormControl, Alert } from 'react-bootstrap';
 import { ApiClient } from '../api/ApiClient';
 import AppointmentValidator from '../validators/AppointmentValidator';
 import { TREATMENTS } from '../constants';
@@ -15,6 +15,8 @@ export const EventModal = ({ onCreate }) => {
   const [time, setTime] = useState('')
   const [observations, setObservations] = useState('')
   const [treatment, setTreatment] = useState("")
+  const [notifications, setNotifications] = useState([])
+
   useEffect(() => {
     ApiClient.patients.all().then((res) => {
       setPatients(res)
@@ -22,29 +24,28 @@ export const EventModal = ({ onCreate }) => {
   }, [])
 
 
+
+
+
   const handleSubmit = (e) => {
     e.preventDefault()
-    let patient = patients.find(x => x.id === patient_id)
-    let validator = new AppointmentValidator({ date, time })
-    validator.call()
-    if (validator.result) {
-      console.log(validator.result)
-      ApiClient.appointments.create({
-        patient: patient.first_name + " " + patient.last_name,
-        patient_id,
-        date,
-        time,
-        status: "Agendada",
-        observations,
-        treatment
-      }).then(() => {
-        onCreate()
-        handleClose()
+    const datetimeString = `${date}T${time}:00`;
+    const appointmentDate = new Date(datetimeString);
+    const utcDate = appointmentDate.toISOString();
+    ApiClient.appointments.create({
+      patient_id,
+      date: utcDate,
+      status: "Agendada",
+      observations,
+      treatment
+    }).then(() => {
+      onCreate()
+      handleClose()
+    })
+      .catch((err) => {
+        console.log()
+        setNotifications(err.response.data)
       })
-    }
-    else {
-      console.log(validator.errors)
-    }
 
 
 
@@ -62,7 +63,20 @@ export const EventModal = ({ onCreate }) => {
           <Modal.Title>Nueva Cita</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-   
+          {
+            notifications.length > 0 &&
+            <>
+              <p className='mb-0'>Se han producido errores:</p>
+              {
+                notifications.map(x => (
+                  <Alert variant='danger' className='border border-3 border-danger border-top-0 border-end-0 border-bottom-0 px-3 py-1 rounded-0' >{x}</Alert>
+                ))
+              }
+
+            </>
+          }
+    
+
 
           <Form id='appointment-form' onSubmit={handleSubmit}>
             <FormGroup>
@@ -71,7 +85,7 @@ export const EventModal = ({ onCreate }) => {
                 <option value="">Seleccione...</option>
                 {
                   patients.map((patient, index) => (
-                    <option key={index} value={patient.id}>{patient.first_name} {patient.last_name}</option>
+                    <option key={index} value={patient.id}>{patient.name}</option>
                   ))
                 }
               </FormSelect>
@@ -83,6 +97,7 @@ export const EventModal = ({ onCreate }) => {
             <FormGroup>
               <label>Hora:</label>
               <FormControl type='time' onChange={({ target }) => setTime(target.value)} value={time} />
+
             </FormGroup>
             <FormGroup>
               <label>Tratamiento:</label>

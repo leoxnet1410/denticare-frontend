@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { PaymentForm } from './payments/Form';
 
 export const NavigationBar = () => {
   return (
@@ -45,10 +46,9 @@ export const NavigationBar = () => {
                 Login
               </Link>
             </li>
-            <li className="Crearusuario">
-              <Link className="nav-link " to="Crearusuario">
-                Crear Usuario
-              </Link>
+            <li >
+              <PaymentForm />
+
             </li>
           </ul>
         </div>

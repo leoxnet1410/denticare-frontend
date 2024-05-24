@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState,useMemo } from 'react';
 import { Card, Col, ListGroup, ListGroupItem, Row, Table, Tabs, Tab, Badge } from 'react-bootstrap';
 import { useParams } from 'react-router-dom';
 import { ApiClient } from '../../api/ApiClient';
@@ -6,12 +6,26 @@ import { StatusBadge } from '../../components/StatusBadge';
 
 export const PatientShow = () => {
   const { id } = useParams();
+  
   const [patient, setPatient] = useState(null)
   const [appointments, setAppointments] = useState([])
   const [billings, setBillings] = useState([])
+  const [payments, setPayments] = useState([])
   const [details, setDetails] = useState(null)
   useEffect(() => {
+    ApiClient.patients.find(id).then(res => {
+      setPatient(res)
+    })
+    ApiClient.bills.all({ patient_id: id }).then(res => {
+      setBillings(res)
+    })
+    ApiClient.payments.all({ patient_id: id }).then(res => {
+      setPayments(res)
+    })
+  }, [])
+  useEffect(() => {
     if (patient) {
+      console.log(patient.id)
       ApiClient.appointments.all({ patient_id: patient.id }).then(res => {
         setAppointments(res)
       })
@@ -26,14 +40,18 @@ export const PatientShow = () => {
 
     }
   }
-  useEffect(() => {
-    ApiClient.patients.find(id).then(res => {
-      setPatient(res)
+
+
+  let saldo = useMemo(()=>{
+    let total = 0
+    billings.forEach(billing=>{
+      total-=billing.totalCost
     })
-    ApiClient.billings.all({ patient_id: id }).then(res => {
-      setBillings(res)
+    payments.forEach(payment=>{
+      total+=payment.amount
     })
-  }, [])
+    return total
+  },[payments,billings])
   if (patient) {
     return (
       <Row>
@@ -50,8 +68,12 @@ export const PatientShow = () => {
                 <td>{patient.ci}</td>
               </tr>
               <tr>
-                <th>Nombre</th>
+                <th>Nombres</th>
                 <td>{patient.first_name} {patient.last_name}</td>
+              </tr>
+              <tr>
+                <th>Apellidos</th>
+                <td>{patient.last_name}</td>
               </tr>
               <tr>
                 <th>Edad</th>
@@ -60,6 +82,10 @@ export const PatientShow = () => {
               <tr>
                 <th>Sexo</th>
                 <td>{patient.gender}</td>
+              </tr>
+              <tr>
+                <th>Estado de cuenta</th>
+                <th>{saldo}</th>
               </tr>
             </tbody>
 
@@ -83,7 +109,7 @@ export const PatientShow = () => {
                       appointments.map((appointment, index) => (
                         <>
                           <tr className={details?.id === appointment.id ? 'bg-info' : ""} key={index} onClick={() => handleDetailClick(appointment)}>
-                            <td>{appointment.date}</td>
+                            <td>{new Date(appointment.date).toLocaleDateString()}</td>
                             <td>{appointment.observations}</td>
                             <td><StatusBadge status={appointment.status} /></td>
                           </tr>
@@ -129,9 +155,9 @@ export const PatientShow = () => {
                             {
                               billings.map((billing, index) => (
                                 <tr key={index}>
-                                  <td>{billing.date}</td>
-                                  <td>{appointments?.find(x => x.id === billing.appointment_id)?.treatment}</td>
-                                  <td>{billing.totalCost}</td>
+                                  <td>{new Date(billing.date).toLocaleDateString()}</td>
+                                  <td>{billing.description}</td>
+                                  <td>{billing.total}</td>
                                 </tr>
                               ))
                             }
@@ -154,11 +180,16 @@ export const PatientShow = () => {
                             </tr>
                           </thead>
                           <tbody>
-                            <tr>
-                              <td>1</td>
-                              <td>2</td>
-                              <td>3</td>
-                            </tr>
+                            {
+                              payments.map((payment, index) => (
+                                <tr>
+                                  <td>{new Date(payment.date).toLocaleDateString()}</td>
+                                  <td>{payment.amount}</td>
+                                  <td>{payment.type}</td>
+                                </tr>
+                              ))
+                            }
+
                           </tbody>
                         </Table>
                       </Card.Body>
