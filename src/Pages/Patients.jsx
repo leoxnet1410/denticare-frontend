@@ -25,6 +25,7 @@ export const Patients = () => {
   }, [])
   return (
     <div className="patients">
+
       <div className="d-flex justify-content-between align-items-center">
         <h2>Pacientes</h2>
         <PatientForm onCreate={refresh} />
@@ -33,7 +34,7 @@ export const Patients = () => {
       <Table size='sm' striped>
         <thead>
           <tr>
-            <th >CI</th>
+            <th>CI</th>
             <th>Nombre</th>
 
             <th>Edad</th>

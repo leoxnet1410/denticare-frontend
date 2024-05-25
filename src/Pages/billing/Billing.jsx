@@ -6,6 +6,7 @@ export const Billing = () => {
   const [billings, setBillings] = useState([])
   const [patients, setPatients] = useState([])
   const [payments, setPayments] = useState([])
+
   useEffect(() => {
     ApiClient.bills.all().then(res => {
       setBillings(res)

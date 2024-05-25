@@ -1,0 +1,14 @@
+@mixin generate-font-sizes($start-size, $end-size, $step) {
+  @for $size from $start-size through $end-size {
+    .fs-#{$size}{
+      font-size: #{$size}px;
+    }
+  }
+}
+@mixin generate-paddings($start-size, $end-size, $step) {
+  @for $size from $start-size through $end-size {
+    .pd-#{$size}{
+      padding: #{$size}px;
+    }
+  }
+}

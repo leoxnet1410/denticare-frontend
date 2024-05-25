@@ -1,9 +1,14 @@
+@import 'mixins';
+@import 'bootstrap';
+@include generate-font-sizes(10, 40, 2);
+@include generate-paddings(10, 40, 2);
 html, body {
   padding: 0px;
   margin: 0px;
   height: 100%;
   width: 100%;
 }
+
 
 nav {
   color: #fff;

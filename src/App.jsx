@@ -1,11 +1,10 @@
-import './App.css'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { Patients } from './Pages/Patients'
 import { Appointments } from './Pages/Appointments'
 import { BasicLayout } from './Layout/Basic'
 import { PatientShow } from './Pages/patients/Show'
 import { Billing } from './Pages/billing/Billing'
-
+import './assets/scss/App.scss'
 
 
 
