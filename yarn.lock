@@ -2248,6 +2248,7 @@ __metadata:
     eslint-plugin-react-refresh: ^0.4.3
     json-server: ^1.0.0-beta.0
     moment: ^2.30.1
+    prettier: ^3.2.5
     react: ^18.2.0
     react-big-calendar: ^1.12.2
     react-bootstrap: ^2.8.0
@@ -3627,6 +3628,15 @@ __metadata:
   version: 1.2.1
   resolution: "prelude-ls@npm:1.2.1"
   checksum: cd192ec0d0a8e4c6da3bb80e4f62afe336df3f76271ac6deb0e6a36187133b6073a19e9727a1ff108cd8b9982e4768850d413baa71214dd80c7979617dca827a
+  languageName: node
+  linkType: hard
+
+"prettier@npm:^3.2.5":
+  version: 3.2.5
+  resolution: "prettier@npm:3.2.5"
+  bin:
+    prettier: bin/prettier.cjs
+  checksum: 2ee4e1417572372afb7a13bb446b34f20f1bf1747db77cf6ccaf57a9be005f2f15c40f903d41a6b79eec3f57fff14d32a20fb6dee1f126da48908926fe43c311
   languageName: node
   linkType: hard
 
