@@ -1,19 +1,15 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import { Patients } from './Pages/Patients'
-import { Appointments } from './Pages/Appointments'
-import { BasicLayout } from './Layout/Basic'
-import { PatientShow } from './Pages/patients/Show'
-import { Billing } from './Pages/billing/Billing'
-import './assets/scss/App.scss'
-
-
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Patients } from "./Pages/Patients";
+import { Appointments } from "./Pages/Appointments";
+import { BasicLayout } from "./Layout/Basic";
+import { PatientShow } from "./Pages/patients/Show";
+import { Billing } from "./Pages/billing/Billing";
+import "./assets/scss/App.scss";
 
 function App() {
-
   return (
     <BrowserRouter>
       <Routes>
-
         <Route element={<BasicLayout />}>
           <Route path="/patients" element={<Patients />} />
           <Route path="/patients/:id" element={<PatientShow />} />
@@ -26,8 +22,7 @@ function App() {
         <Route path="/crear_usuario" element={<UserForm />} /> */}
       </Routes>
     </BrowserRouter>
-
-  )
+  );
 }
 
-export default App
+export default App;
