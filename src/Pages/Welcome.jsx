@@ -1,84 +1,56 @@
 
+import React, { useState } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faTooth } from '@fortawesome/free-solid-svg-icons';
 
-export const Welcome = () => {
+
+ export const Welcome= () => {
+  const [isActive, setIsActive] = useState(false);
+
   return (
-    <div>
-      <header className="jumbotron jumbotron-fluid">
-        <div className="container">
-          <h1 className="display-4">Bienvenidos a Denticare</h1>
-          <p className="lead">
-            Ofrecemos servicios dentales de alta calidad para tu bienestar y salud dental.
-          </p>
-          <a className="btn btn-primary btn-lg" href="#contacto" role="button">
-            Agenda tu cita
-          </a>
+    <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' }}>
+      <div className={`auth-container ${isActive ? 'active' : ''}`} id="auth-container">
+        <div className="form-container sign-up">
+          <form>
+            <h1>Crea una cuenta</h1>
+           
+            <span>Usa tu correo electrónico para registrarte</span>
+            <input type="text" placeholder="Nombre" />
+            <input type="email" placeholder="Correo electrónico" />
+            <input type="password" placeholder="Contraseña" />
+            <button>Registrarse</button>
+          </form>
         </div>
-      </header>
-
-      <section id="servicios" className="py-5">
-        <div className="container">
-          <h2 className="text-center mb-4">Nuestros Servicios</h2>
-          <div className="row">
-            <div className="col-md-4">
-              <div className="card">
-                <img src="servicio1.jpg" className="card-img-top" alt="Servicio 1" />
-                <div className="card-body">
-                  <h5 className="card-title">Limpieza Dental</h5>
-                  <p className="card-text">
-                    Mantén una sonrisa sana y radiante con nuestras limpiezas dentales profesionales.
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div className="col-md-4">{/* Repite el bloque de servicio aquí */}</div>
-            <div className="col-md-4">{/* Repite el bloque de servicio aquí */}</div>
-          </div>
+        <div className="form-container sign-in">
+          <form>
+          <h1>
+              Denticare <FontAwesomeIcon icon={faTooth} className="rotating-icon" />
+            </h1>
+            
+            <span>o usa tu correo electrónico y contraseña</span>
+            <input type="email" placeholder="Correo electrónico" />
+            <input type="password" placeholder="Contraseña" />
+            <a href="#">¿Olvidaste tu contraseña?</a>
+            <button>Iniciar sesión</button>
+          </form>
         </div>
-      </section>
-
-      <section id="nosotros" className="py-5 bg-light">
-        <div className="container">
-          <div className="row">
-            <div className="col-md-6">
-              <h2>Nuestra Clínica Dental</h2>
-              <p>
-              En nuestro consultorio, nos esforzamos por brindar servicios dentales de la más alta calidad, con un enfoque en la salud bucal integral y el bienestar de nuestros pacientes. Nuestro objetivo es crear sonrisas saludables y radiantes que duren toda la vida.
-
-               Contamos con un equipo de profesionales altamente capacitados y apasionados por su trabajo, quienes te recibirán con amabilidad y comprensión. Utilizamos tecnología de vanguardia y técnicas avanzadas para asegurarnos de que recibas el mejor tratamiento posible.
-              </p>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem facere odio officiis adipisci qui
-                debitis beatae natus. Error, quo voluptas.
-              </p>
+        <div className="toggle-container">
+          <div className="toggle">
+            <div className="toggle-panel toggle-left ">
+              <h1>¡Bienvenido de nuevo!</h1>
+              <p>Ingresa tus datos personales para usar todas las funciones del sitio</p>
+              <button className="hidden" onClick={() => setIsActive(false)}>Iniciar sesión</button>
             </div>
-            <div className="col-md-6">
-              <img src="src/img/portada.jpg" className="img-fluid" alt="Clínica Dental" />
+            <div className="toggle-panel toggle-right">
+              <h1>Bienvenido</h1>
+              <p>Regístrate con tus datos personales</p>
+              <button className="hidden" onClick={() => setIsActive(true)}>Registrarse</button>
             </div>
           </div>
         </div>
-      </section>
-
-      <section id="contacto" className="py-5">
-        <div className="container">
-          <h2 className="text-center mb-4">Contáctanos</h2>
-          <div className="row">
-            <div className="col-md-6">
-              
-            </div>
-            <div className="col-md-6">
-              <h4>Visítanos</h4>
-              <p>123 Calle Principal</p>
-              <p>Ciudad, Código Postal</p>
-              <h4>Llámanos</h4>
-              <p>+123 456 789</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <footer className="bg-dark text-light text-center py-3">
-        <p>Todos los derechos reservados &copy; 2023 Clínica Dental</p>
-      </footer>
+      </div>
     </div>
   );
 };
+
+export default Welcome;

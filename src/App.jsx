@@ -4,6 +4,7 @@ import { Appointments } from "./Pages/Appointments";
 import { BasicLayout } from "./Layout/Basic";
 import { PatientShow } from "./Pages/patients/Show";
 import { Billing } from "./Pages/billing/Billing";
+import { Welcome } from "./Pages/Welcome";
 import "./assets/scss/App.scss";
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
           <Route path="/patients/:id" element={<PatientShow />} />
           <Route path="/appointments" element={<Appointments />} />
           <Route path="/billing" element={<Billing />} />
+            <Route path="/" element={<Welcome />} />
         </Route>
         {/* <Route path="welcome" element={<Welcome />} />
         <Route path="/login" element={<LoginForm />} />
