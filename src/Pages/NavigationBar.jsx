@@ -22,7 +22,7 @@ export const NavigationBar = () => {
         <div className="collapse navbar-collapse" id="navbarText">
           <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
             <li className="welcome">
-              <Link className="nav-link " to="/">
+              <Link className="nav-link " to="welcome">
                 Inicio
               </Link>
             </li>
